@@ -1,0 +1,19 @@
+Gem::Specification.new do |s|
+  s.name        = '<%= gem_name %>'
+  s.version     = '<%= gem_version %>'
+  s.date        = '<%= build_date %>'
+  s.summary     = '<%= gem_summary %>'
+  s.description = '<%= gem_description %>'
+  s.authors     = '<%= author %>'
+  s.email       = '<%= author_email %>'
+  s.homepage    = '<%= author_homepage %>'
+  s.license     = '<%= gem_license %>'
+
+  # Gem Dependencies
+  <%- Array(dependencies).each do |dep| -%>
+    <%- if dep[:versions] != nil -%>
+      <%- dep_versions = ", #{Array(dep[:versions]).map { |s| "'#{s}'"}.join(', ')}" -%>
+    <%- end -%>
+  s.add_runtime_dependency '<%= dep[:name] %>'<%= dep_versions unless dep_versions.nil? %>
+  <%- end -%>
+end
