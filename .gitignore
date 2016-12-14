@@ -1,0 +1,6 @@
+*swp
+pkg/
+Gemfile.lock
+Gemfile.local
+.bundle
+.idea
