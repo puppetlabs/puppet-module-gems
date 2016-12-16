@@ -11,9 +11,9 @@ Gem::Specification.new do |s|
 
   # Gem Dependencies
   <%- Array(dependencies).each do |dep| -%>
-    <%- if dep[:versions] != nil -%>
-      <%- dep_versions = ", #{Array(dep[:versions]).map { |s| "'#{s}'"}.join(', ')}" -%>
+    <%- if dep['version'] != nil -%>
+      <%- dep_versions = ", #{Array(dep['version']).map { |s| "'#{s}'"}.join(', ')}" -%>
     <%- end -%>
-  s.add_runtime_dependency '<%= dep[:name] %>'<%= dep_versions unless dep_versions.nil? %>
+  s.add_runtime_dependency '<%= dep['gem'] %>'<%= dep_versions unless dep_versions.nil? %>
   <%- end -%>
 end
