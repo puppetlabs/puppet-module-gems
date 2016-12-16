@@ -13,7 +13,7 @@ Linux-based modules:
 
 Windows-based modules:
 
-| Gemfile group/Ruby_version | ruby-1.8.x | ruby-1.9.x | ruby-2.1.x | ruby-2.3.x |
+| Gemfile group/Ruby_version | ruby-1.9.3 | ruby-2.0.0 | ruby-2.1.x | ruby-2.3.x |
 |:---|:---|:---|:---|:---|
 | default | x | x | x | x |
 | development | x | x | x | x |
