@@ -1,0 +1,73 @@
+dependencies:
+  shared:
+    default:
+      shared:
+      ruby-2.1:
+      ruby-2.3:
+    dev:
+      shared:
+        - gem: metadata-json-lint
+        - gem: mocha
+          version: '< 1.2.0'
+        - gem: pry
+        - gem: puppet-blacksmith
+          version: '>= 3.4.0'
+        - gem: puppet_facts
+        - gem: puppet-lint
+        - gem: puppetlabs_spec_helper
+          version: '>= 1.2.1'
+        - gem: rspec-puppet
+          version: '>= 2.3.2'
+        - gem: rspec-puppet-facts
+        - gem: simplecov
+        - gem: rainbow
+          version: '< 2.2.0'
+      ruby-2.1:
+        - gem: parallel_tests
+        - gem: rubocop
+      ruby-2.3:
+        - gem: parallel_tests
+        - gem: rubocop
+    system:
+      shared:
+        - gem: beaker-puppet_install_helper
+        - gem: beaker-module_install_helper
+        - gem: master_manipulator
+      ruby-2.1:
+      ruby-2.3:
+  posix:
+    default:
+      shared:
+      ruby-2.1:
+      ruby-2.3:
+    dev:
+      shared:
+      ruby-2.1:
+      ruby-2.3:
+    system:
+      shared:
+      ruby-2.1:
+      ruby-2.3:
+  win:
+    default:
+      shared:
+        - gem: win32-dir
+          version: '<= 0.4.9'
+        - gem: win32-eventlog
+          version: '<= 0.6.5'
+        - gem: win32-process
+          version: '<= 0.7.5'
+        - gem: win32-security
+          version: '<= 0.2.5'
+        - gem: win32-service
+          version: '<= 0.8.8'
+      ruby-2.1:
+      ruby-2.3:
+    dev:
+      shared:
+      ruby-2.1:
+      ruby-2.3:
+    system:
+      shared:
+      ruby-2.1:
+      ruby-2.3:

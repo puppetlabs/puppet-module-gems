@@ -1,0 +1,8 @@
+info:
+  prefix: 'puppet-module'
+  authors: 'Puppet, Inc.'
+  email: 'team-modules@puppet.com'
+  homepage: 'https://github.com/puppetlabs/puppet-gem-manager'
+  licenses: 'Apache-2.0'
+  summary: 'A gem used to manage Puppet module dependencies.'
+  version: '0.0.1'
