@@ -1,9 +1,8 @@
 dependencies:
   shared:
     default:
-      shared:
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:
     dev:
       shared:
         - gem: metadata-json-lint
@@ -22,10 +21,10 @@ dependencies:
         - gem: simplecov
         - gem: rainbow
           version: '< 2.2.0'
-      ruby-2.1:
+      r2.1:
         - gem: parallel_tests
         - gem: rubocop
-      ruby-2.3:
+      r2.3:
         - gem: parallel_tests
         - gem: rubocop
     system:
@@ -33,21 +32,18 @@ dependencies:
         - gem: beaker-puppet_install_helper
         - gem: beaker-module_install_helper
         - gem: master_manipulator
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:
   posix:
     default:
-      shared:
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:
     dev:
-      shared:
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:
     system:
-      shared:
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:
   win:
     default:
       shared:
@@ -61,13 +57,11 @@ dependencies:
           version: '<= 0.2.5'
         - gem: win32-service
           version: '<= 0.8.8'
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:
     dev:
-      shared:
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:
     system:
-      shared:
-      ruby-2.1:
-      ruby-2.3:
+      r2.1:
+      r2.3:

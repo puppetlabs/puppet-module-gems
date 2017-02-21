@@ -1,15 +1,14 @@
 Gem::Specification.new do |s|
-  s.name        = '<%= gem_name %>'
-  s.version     = '<%= gem_version %>'
-  s.date        = '<%= build_date %>'
-  s.summary     = '<%= info[summary] %>'
-  s.authors     = '<%= info[authors] %>'
-  s.email       = '<%= info[email] %>'
-  s.homepage    = '<%= info[homepage] %>'
-  s.license     = '<%= info[licenses] %>'
+  s.name        = '<%= gemspec['name'] %>'
+  s.version     = '<%= gemspec['info']['version'] %>'
+  s.summary     = '<%= gemspec['info']['summary'] %>'
+  s.authors     = '<%= gemspec['info']['authors'] %>'
+  s.email       = '<%= gemspec['info']['email'] %>'
+  s.homepage    = '<%= gemspec['info']['homepage'] %>'
+  s.license     = '<%= gemspec['info']['licenses'] %>'
 
   # Gem Dependencies
-  <%- Array(dependencies).each do |dep| -%>
+  <%- Array(gemspec['dependencies']).each do |dep| -%>
     <%- if dep['version'] != nil -%>
       <%- dep_versions = ", #{Array(dep['version']).map { |s| "'#{s}'"}.join(', ')}" -%>
     <%- end -%>
