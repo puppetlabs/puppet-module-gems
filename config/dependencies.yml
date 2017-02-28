@@ -21,12 +21,9 @@ dependencies:
         - gem: simplecov
         - gem: rainbow
           version: '< 2.2.0'
+        - gem: rubocop
       r2.1:
-        - gem: parallel_tests
-        - gem: rubocop
       r2.3:
-        - gem: parallel_tests
-        - gem: rubocop
     system:
       shared:
         - gem: beaker-puppet_install_helper
