@@ -6,7 +6,21 @@ module PuppetGemManager
 
     def self.build_gem_matrix(config_file_path)
       config = YAML.load_file(config_file_path)
-      parse_dependencies(config['dependencies'])
+
+      # Validate that YAML was able to read something and config is not nil or false.
+      # Validate that the dependencies structure follows the requirements.
+      if not config
+        abort 'FAILED: [DependenciesParser] Failed to read Dependencies configuration file.'
+      elsif not config.has_key? 'dependencies'
+        abort 'FAILED: [DependenciesParser] Dependencies configuration is invalid. Missing top-level \'dependencies\' key.'
+      end  
+
+      deps = config['dependencies']
+      if deps.nil? or deps.empty?
+        abort 'FAILED: [DependenciesParser] Dependencies configuration contains no dependencies.'
+      else
+        parse_dependencies(deps)
+      end
     end
 
     def self.parse_dependencies(config, name = '', results = {})
