@@ -1,7 +1,7 @@
 require 'yaml'
 require 'deep_merge'
 
-module PuppetGemManager
+module PuppetModuleGems
   module DependenciesParser
 
     def self.build_gem_matrix(config_file_path)

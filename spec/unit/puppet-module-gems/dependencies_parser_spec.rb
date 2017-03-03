@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PuppetGemManager::DependenciesParser do
+describe PuppetModuleGems::DependenciesParser do
   describe '#build_gem_matrix' do
 
     it 'should import data from dependencies file' do
@@ -17,7 +17,7 @@ describe PuppetGemManager::DependenciesParser do
       }
 
       allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return(dep_hash)
-      result = PuppetGemManager::DependenciesParser.build_gem_matrix('/tmp/foofile')
+      result = PuppetModuleGems::DependenciesParser.build_gem_matrix('/tmp/foofile')
 
       expect(result.keys.length).to eq(4)      
 
@@ -48,19 +48,19 @@ describe PuppetGemManager::DependenciesParser do
 
       it 'is not empty' do
         allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return(false)
-        expect { PuppetGemManager::DependenciesParser.build_gem_matrix('/tmp/foofile') }.
+        expect { PuppetModuleGems::DependenciesParser.build_gem_matrix('/tmp/foofile') }.
           to raise_error(SystemExit, 'FAILED: [DependenciesParser] Failed to read Dependencies configuration file.')
       end
 
       it 'starts with correct key' do
         allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return({'foo' => 'bar'})
-        expect { PuppetGemManager::DependenciesParser.build_gem_matrix('/tmp/foofile') }.
+        expect { PuppetModuleGems::DependenciesParser.build_gem_matrix('/tmp/foofile') }.
           to raise_error(SystemExit, 'FAILED: [DependenciesParser] Dependencies configuration is invalid. Missing top-level \'dependencies\' key.')
       end
 
       it 'has content' do
         allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return({'dependencies' => nil})
-        expect { PuppetGemManager::DependenciesParser.build_gem_matrix('/tmp/foofile') }.
+        expect { PuppetModuleGems::DependenciesParser.build_gem_matrix('/tmp/foofile') }.
           to raise_error(SystemExit, 'FAILED: [DependenciesParser] Dependencies configuration contains no dependencies.')
       end
 

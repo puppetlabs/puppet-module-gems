@@ -1,1 +1,1 @@
-require 'puppet-gem-manager'
+require 'puppet-module-gems'

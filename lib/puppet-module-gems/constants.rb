@@ -1,4 +1,4 @@
-module PuppetGemManager
+module PuppetModuleGems
   module Constants
 
     proj_root = File.expand_path(File.join(File.dirname(__FILE__), '../..'))
