@@ -8,7 +8,7 @@
 3. [Usage - Configuration options and additional functionality](#usage)
 4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+6. [Support](#support)
 
 ## Description
 
@@ -151,5 +151,9 @@ And for example, the gemspec for `test-gem-first-a-1.0.0.gem` will include depen
 
 ## Limitations
 
-## Development
+Use of this utility has only been tested on Linux and OS-X platforms.
 
+
+## Support
+
+This utility is maintained and developed by the Puppet SDK and Puppet Modules team. Please file an [issue](https://github.com/puppetlabs/puppet-module-gems/issues) for support. [Contributions](https://github.com/puppetlabs/puppet-module-gems/blob/master/CONTRIBUTING.md) are also welcomed!

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "file_format": "This MAINTAINERS file format is described at http://pup.pt/maintainers",
+  "issues": "https://github.com/puppetlabs/beaker-module_install_helper/issues",
+  "people": [
+    {
+      "github": "bmjen",
+      "name": "Bryan Jen"
+    },
+    {
+      "github": "DavidS",
+      "name": "David Schmitt"
+    },
+    {
+      "github": "rodjek",
+      "name": "Tim Sharpe"
+    }
+  ]
+}
