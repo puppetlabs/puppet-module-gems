@@ -1,9 +1,9 @@
-# Puppet Gem Manager
+# Puppet Module Gems
 
 #### Table of Contents
 
 1. [Description - What this utility does and why it is useful](#description)
-2. [Setup - The basics of getting started with Puppet Gem Manager](#setup)
+2. [Setup - The basics of getting started with Puppet Module Gems](#setup)
     * [Setup requirements](#setup-requirements)
 3. [Usage - Configuration options and additional functionality](#usage)
 4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
@@ -12,7 +12,7 @@
 
 ## Description
 
-The Puppet Gem Manager is a utility that generates gemspecs and builds management gems based on a YAML-based configuration. The purpose for these gems is to reduce the amount of changes required to sync shared dependencies across multiple modules’ Gemfiles. 
+Puppet Module Gems is a utility that generates gemspecs and builds management gems based on a YAML-based configuration. The purpose for these gems is to reduce the amount of changes required to sync shared dependencies across multiple modules’ Gemfiles. 
 
 For example, when a dependency gem publishes a new release that requires Ruby 2.3.3, this would normally break all modules that install this gem that run on a version of Ruby less than 2.3.3. To fix this previously, you would need a modulesync to pin the gem to a compatible version. With these new gem management gems, you can instead update the gem version pin in a configuration YAML. The gem management will then build and publish to rubygems, and a bundle update fixes all affected modules.
 
@@ -28,7 +28,7 @@ For example, when a dependency gem publishes a new release that requires Ruby 2.
 
 To get started using this utility, first clone this git repository:
 
-`git clone git@github.com:puppetlabs/puppet-gem-manager.git`
+`git clone git@github.com:puppetlabs/puppet-module-gems.git`
 
 Install the development gems:
 
@@ -36,7 +36,7 @@ Install the development gems:
 
 ### Building the gems
 
-To build the gems with the default configuration, execute the script `exe/puppet-gem-manager.rb`. The gemspec files and gems will be generated in the `pkg` directory.
+To build the gems with the default configuration, execute the script `bundle exec exe/puppet-module-gems.rb`. The gemspec files and gems will be generated in the `pkg` directory.
 
 ### Customizing dependency gems
 
@@ -77,13 +77,13 @@ The above Gemfile section would become:
 
 ```
 group :development do
-  gem 'puppet-gem-manager-posix-dev-r2.1', :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
-  gem 'puppet-gem-manager-posix-dev-r2.3', :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
+  gem 'puppet-module-posix-dev-r2.1', :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
+  gem 'puppet-module-posix-dev-r2.3', :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
 end
 
 group :system_tests do
-  gem 'puppet-gem-manager-posix-system-r2.1', :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
-  gem 'puppet-gem-manager-posix-system-r2.3', :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
+  gem 'puppet-module-posix-system-r2.1', :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
+  gem 'puppet-module-posix-system-r2.3', :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
 end
 ```
 

@@ -1,4 +1,4 @@
-module PuppetGemManager
+module PuppetModuleGems
   module GemBuilder
 
     def self.build_all_gems(pkg_path)

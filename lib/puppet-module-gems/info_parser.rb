@@ -1,6 +1,6 @@
 require 'yaml'
 
-module PuppetGemManager
+module PuppetModuleGems
   module InfoParser
 
     def self.get_info(file_path)

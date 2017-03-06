@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PuppetGemManager::InfoParser do
+describe PuppetModuleGems::InfoParser do
   describe "#get_info" do
 
     it "should import data from info file" do
@@ -17,7 +17,7 @@ describe PuppetGemManager::InfoParser do
       }
 
       allow(YAML).to receive(:load_file).with("/tmp/foofile").and_return(info_hash)
-      result = PuppetGemManager::InfoParser.get_info("/tmp/foofile")
+      result = PuppetModuleGems::InfoParser.get_info("/tmp/foofile")
       expect(result).to eq(info_hash['info'])
     end
 
@@ -25,19 +25,19 @@ describe PuppetGemManager::InfoParser do
 
       it 'is not empty' do
         allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return(false)
-        expect { PuppetGemManager::InfoParser.get_info('/tmp/foofile') }.
+        expect { PuppetModuleGems::InfoParser.get_info('/tmp/foofile') }.
           to raise_error(SystemExit, 'FAILED: [InfoParser] Failed to read Information configuration file.')
       end
 
       it 'starts with correct key' do
         allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return({'foo' => 'bar'})
-        expect { PuppetGemManager::InfoParser.get_info('/tmp/foofile') }.
+        expect { PuppetModuleGems::InfoParser.get_info('/tmp/foofile') }.
           to raise_error(SystemExit, 'FAILED: [InfoParser] Info configuration is invalid. Missing top-level \'info\' key.')
       end
 
       it 'has content' do
         allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return({'info' => nil})
-        expect { PuppetGemManager::InfoParser.get_info('/tmp/foofile') }.
+        expect { PuppetModuleGems::InfoParser.get_info('/tmp/foofile') }.
           to raise_error(SystemExit, 'FAILED: [InfoParser] Info configuration file contains no information.')
       end
 
@@ -57,7 +57,7 @@ describe PuppetGemManager::InfoParser do
         info_hash['info'].delete missing_key
 
         allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return(info_hash)
-        expect { PuppetGemManager::InfoParser.get_info('/tmp/foofile') }.
+        expect { PuppetModuleGems::InfoParser.get_info('/tmp/foofile') }.
           to raise_error(SystemExit, "FAILED: [InfoParser] Info Configuration is missing required key of #{missing_key}.")
       end
 

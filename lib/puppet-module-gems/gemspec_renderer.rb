@@ -1,7 +1,7 @@
 require 'erb'
 require 'fileutils'
 
-module PuppetGemManager
+module PuppetModuleGems
   module GemspecRenderer
 
     def self.generate_gemspec(gemspec, template_path, output_path)
