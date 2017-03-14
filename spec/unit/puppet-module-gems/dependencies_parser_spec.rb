@@ -6,7 +6,7 @@ describe PuppetModuleGems::DependenciesParser do
     it 'should import data from dependencies file' do
       dep_hash = {
         'dependencies' => {
-          'shared' => 
+          'shared' =>
             {'b0' => [{'gem' => 'c0', 'version' => '> 0.0.1'}],
              'b1' => [{'gem' => 'c1', 'version' => '< 1.0.0'}]},
           'a0' =>
@@ -19,12 +19,10 @@ describe PuppetModuleGems::DependenciesParser do
       allow(YAML).to receive(:load_file).with('/tmp/foofile').and_return(dep_hash)
       result = PuppetModuleGems::DependenciesParser.build_gem_matrix('/tmp/foofile')
 
-      expect(result.keys.length).to eq(4)      
+      expect(result).to be_a Hash
 
       # Validate that the matrix is built with correct keys
-      ['a0-b0', 'a0-b1', 'a1-b0', 'a1-b1'].each do |key|
-        expect(result.keys).to include(key)
-      end
+      expect(result.keys).to match_array(['a0-b0', 'a0-b1', 'a1-b0', 'a1-b1'])
 
       # Validate that the matrix is built with correct shared deps
       ['a0-b0', 'a1-b0'].each do |key|

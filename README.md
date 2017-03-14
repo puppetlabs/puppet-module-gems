@@ -12,7 +12,7 @@
 
 ## Description
 
-Puppet Module Gems is a utility that generates gemspecs and builds management gems based on a YAML-based configuration. The purpose for these gems is to reduce the amount of changes required to sync shared dependencies across multiple modules’ Gemfiles. 
+Puppet Module Gems is a utility that generates gemspecs and builds management gems based on a YAML-based configuration. The purpose for these gems is to reduce the amount of changes required to sync shared dependencies across multiple modules’ Gemfiles.
 
 For example, when a dependency gem publishes a new release that requires Ruby 2.3.3, this would normally break all modules that install this gem that run on a version of Ruby less than 2.3.3. To fix this previously, you would need a modulesync to pin the gem to a compatible version. With these new gem management gems, you can instead update the gem version pin in a configuration YAML. The gem management will then build and publish to rubygems, and a bundle update fixes all affected modules.
 
@@ -50,7 +50,7 @@ To use the resulting gems, replace the sections of the Module Gemfile with the a
 
 For Example:
 
-```
+```ruby
 group :development do
   gem 'puppet-lint',                        :require => false
   gem 'metadata-json-lint',                 :require => false, :platforms => 'ruby'
@@ -75,15 +75,17 @@ end
 
 The above Gemfile section would become:
 
-```
+```ruby
+# calculate the correct package names from the current ruby version
+ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
+minor_version = "#{ruby_version_segments[0]}.#{ruby_version_segments[1]}"
+
 group :development do
-  gem 'puppet-module-posix-dev-r2.1', :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
-  gem 'puppet-module-posix-dev-r2.3', :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
+  gem "puppet-module-posix-dev-r#{minor_version}"
 end
 
 group :system_tests do
-  gem 'puppet-module-posix-system-r2.1', :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
-  gem 'puppet-module-posix-system-r2.3', :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
+  gem "puppet-module-posix-system-r#{minor_version}"
 end
 ```
 
