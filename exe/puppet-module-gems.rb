@@ -13,6 +13,5 @@ matrix.keys.each do |gem|
   gemspec['dependencies'] = matrix[gem]
 
   PuppetModuleGems::GemspecRenderer.generate_gemspec(gemspec, TEMPLATE_FILE, PKG_PATH)
-  PuppetModuleGems::GemBuilder.build_all_gems(PKG_PATH)
 end
-
+PuppetModuleGems::GemBuilder.build_all_gems(PKG_PATH)
