@@ -50,7 +50,7 @@ To use the resulting gems, replace the sections of the Module Gemfile with the a
 
 For Example:
 
-```
+```ruby
 group :development do
   gem 'puppet-lint',                        :require => false
   gem 'metadata-json-lint',                 :require => false, :platforms => 'ruby'
@@ -75,15 +75,17 @@ end
 
 The above Gemfile section would become:
 
-```
+```ruby
+# calculate the correct package names from the current ruby version
+ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
+minor_version = "#{ruby_version_segments[0]}.#{ruby_version_segments[1]}"
+
 group :development do
-  gem 'puppet-module-posix-dev-r2.1' if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
-  gem 'puppet-module-posix-dev-r2.3' if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
+  gem "puppet-module-posix-dev-r#{minor_version}"
 end
 
 group :system_tests do
-  gem 'puppet-module-posix-system-r2.1' if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.3.0')
-  gem 'puppet-module-posix-system-r2.3' if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
+  gem "puppet-module-posix-system-r#{minor_version}"
 end
 ```
 
