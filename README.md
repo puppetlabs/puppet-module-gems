@@ -135,7 +135,7 @@ dependencies:
       - gem: a-gem-one
     b:
       - gem: b-gem-one
-        version: '< 2.0.0`
+        version: '< 2.0.0'
   second:
     b:
       - gem: b-gem-two
