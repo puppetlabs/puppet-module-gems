@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Pins specinfra to 2.67.3
+
 ## 0.0.2
 
 ### Bugfixes
