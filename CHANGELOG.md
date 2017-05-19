@@ -1,3 +1,6 @@
+## 0.0.4
+- Adds rspec_junit_formatter ~> 0.2 as a shared dev dependency
+
 ## 0.0.3
 
 - Pins specinfra to 2.67.3
