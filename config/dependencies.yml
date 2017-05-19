@@ -22,6 +22,8 @@ dependencies:
         - gem: rainbow
           version: '< 2.2.0'
         - gem: rubocop
+        - gem: rspec_junit_formatter
+          version: '~> 0.2'
       r2.1:
       r2.3:
         - gem: rubocop-rspec
