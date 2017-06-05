@@ -3,6 +3,7 @@ dependencies:
     default:
       r2.1:
       r2.3:
+      r2.4:
     dev:
       shared:
         - gem: mocha
@@ -28,6 +29,7 @@ dependencies:
       r2.3:
         - gem: rubocop-rspec
           version: '~> 1.6'
+      r2.4:
     system:
       shared:
         - gem: beaker-puppet_install_helper
@@ -35,10 +37,12 @@ dependencies:
         - gem: master_manipulator
       r2.1:
       r2.3:
+      r2.4:
   posix:
     default:
       r2.1:
       r2.3:
+      r2.4:
     dev:
       shared:
         - gem: metadata-json-lint
@@ -46,9 +50,11 @@ dependencies:
         - gem: simplecov
       r2.1:
       r2.3:
+      r2.4:
     system:
       r2.1:
       r2.3:
+      r2.4:
   win:
     default:
       shared:
@@ -64,9 +70,12 @@ dependencies:
           version: '<= 0.8.8'
       r2.1:
       r2.3:
+      r2.4:
     dev:
       r2.1:
       r2.3:
+      r2.4:
     system:
       r2.1:
       r2.3:
+      r2.4:
