@@ -1,4 +1,9 @@
+## 0.0.5
+
+- Add ruby 2.4
+
 ## 0.0.4
+
 - Adds rspec_junit_formatter ~> 0.2 as a shared dev dependency
 
 ## 0.0.3
@@ -8,6 +13,7 @@
 ## 0.0.2
 
 ### Bugfixes
+
 - Moved the static analysis gems that were in shared to posix, since those gems have an additional ruby (devkit) requirement on Windows.
 
 ## 0.0.1
