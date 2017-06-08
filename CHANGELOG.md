@@ -1,3 +1,7 @@
+## 0.0.6
+
+- Pins Nokogiri on Windows and Ruby < 2.2
+
 ## 0.0.5
 
 - Add ruby 2.4
