@@ -1,3 +1,7 @@
+## 0.0.7
+
+- Adds rubocop-rspec as a dependency for all platforms
+
 ## 0.0.6
 
 - Pins Nokogiri on Windows and Ruby < 2.2
