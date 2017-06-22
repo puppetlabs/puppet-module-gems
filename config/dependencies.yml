@@ -6,6 +6,7 @@ dependencies:
       r2.4:
     dev:
       shared:
+        - gem: metadata-json-lint
         - gem: mocha
           version: '< 1.2.0'
         - gem: parallel_tests
@@ -45,7 +46,6 @@ dependencies:
       r2.4:
     dev:
       shared:
-        - gem: metadata-json-lint
         - gem: rspec-puppet-facts
         - gem: simplecov
       r2.1:
