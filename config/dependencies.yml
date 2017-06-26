@@ -13,7 +13,6 @@ dependencies:
         - gem: pry
         - gem: puppet-blacksmith
           version: '>= 3.4.0'
-        - gem: puppet_facts
         - gem: puppet-lint
         - gem: puppetlabs_spec_helper
           version: '>= 1.2.1'
@@ -21,6 +20,7 @@ dependencies:
           version: '2.67.3'
         - gem: rspec-puppet
           version: '>= 2.3.2'
+        - gem: rspec-puppet-facts
         - gem: rainbow
           version: '< 2.2.0'
         - gem: rubocop
@@ -46,7 +46,6 @@ dependencies:
       r2.4:
     dev:
       shared:
-        - gem: rspec-puppet-facts
         - gem: simplecov
       r2.1:
       r2.3:
