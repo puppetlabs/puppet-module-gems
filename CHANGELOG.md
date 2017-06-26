@@ -1,3 +1,9 @@
+## 0.0.8
+
+- Adds metadata-json-lint to shared (Posix/Windows).
+- Adds rspec-puppet-facts to shared (Posix/Windows).
+- Removes puppet_facts.
+
 ## 0.0.7
 
 - Adds rubocop-rspec as a dependency for all platforms
