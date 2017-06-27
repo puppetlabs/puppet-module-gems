@@ -11,6 +11,7 @@ dependencies:
           version: '< 1.2.0'
         - gem: parallel_tests
         - gem: pry
+        - gem: gettext-setup
         - gem: puppet-blacksmith
           version: '>= 3.4.0'
         - gem: puppet-lint
