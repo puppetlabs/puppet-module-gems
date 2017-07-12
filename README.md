@@ -153,6 +153,13 @@ And for example, the gemspec for `test-gem-first-a-1.0.0.gem` will include depen
 - shared-gem, '> 1.0.0'
 - a-gem-one
 
+**Note:** To add a version range to a dependency, simply put the lower and upper bindings in an array:
+
+``` YAML
+- gem: gem-name
+  version: ['>= 1.0.0', '< 2.0.0']
+```
+
 ## Limitations
 
 Use of this utility has only been tested on Linux and OS-X platforms.
