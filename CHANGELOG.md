@@ -1,3 +1,7 @@
+## 0.0.10
+
+- Updates the puppetlabs\_spec\_helper version range.
+
 ## 0.0.9
 
 - Removes puppet-blacksmith from managed dependencies.
