@@ -1,8 +1,14 @@
+## 0.0.9
+
+- Removes puppet-blacksmith from managed dependencies.
+- Adds gettext-setup to shared dependencies management.
+- Adds Upper and lower bounds to version pins to avoid crossing major versions.
+
 ## 0.0.8
 
 - Adds metadata-json-lint to shared (Posix/Windows).
 - Adds rspec-puppet-facts to shared (Posix/Windows).
-- Removes puppet_facts.
+- Removes puppet\_facts.
 
 ## 0.0.7
 
@@ -18,7 +24,7 @@
 
 ## 0.0.4
 
-- Adds rspec_junit_formatter ~> 0.2 as a shared dev dependency
+- Adds rspec\_junit\_formatter ~> 0.2 as a shared dev dependency
 
 ## 0.0.3
 
