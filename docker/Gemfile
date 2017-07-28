@@ -1,0 +1,35 @@
+source 'https://rubygems.org'
+
+# Find a location or specific version for a gem. place_or_version can be a
+# version, which is most often used. It can also be git, which is specified as
+# `git://somewhere.git#branch`. You can also use a file source location, which
+# is specified as `file://some/location/on/disk`.
+def location_for(place_or_version, fake_version = nil)
+  if place_or_version =~ /^(git[:@][^#]*)#(.*)/
+    [fake_version, { :git => $1, :branch => $2, :require => false }].compact
+  elsif place_or_version =~ /^file:\/\/(.*)/
+    ['>= 0', { :path => File.expand_path($1), :require => false }]
+  else
+    [place_or_version, { :require => false }]
+  end
+end
+
+ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
+minor_version = "#{ruby_version_segments[0]}.#{ruby_version_segments[1]}"  
+
+gem "puppet-module-posix-default-r#{minor_version}"
+
+gem "coveralls", require: false
+gem "rubycritic", require: false
+gem "simplecov-console", require: false
+
+gem 'puppet', *location_for(ENV['PUPPET_GEM_VERSION'])
+
+group :development do
+  gem "puppet-module-posix-dev-r#{minor_version}"
+end
+
+group :system_tests do
+  gem "puppet-module-posix-system-r#{minor_version}"
+  gem "beaker-rspec", *location_for(ENV['BEAKER_RSPEC_VERSION'])
+end
