@@ -1,6 +1,6 @@
 # Docker Images for Testing Puppet Modules
 
-It's reasonable to assume that using the gems from puppet-module-gems the fast majority of modules would have the asme Gemfile. This in turn means every run of `bundle install` against that Gemfile is a waste, apart from the first onefor each Ruby/Puppet version combination. By creating an publishing Docker images we can make tests more portable, by sharing the whole execution environment, and remove the need for a local Ruby setup completely into the bargain.
+It's reasonable to assume that using the gems from puppet-module-gems the fast majority of modules would have the same Gemfile. This in turn means every run of `bundle install` against that Gemfile is a waste, apart from the first one for each Ruby/Puppet version combination. By creating, and publishing Docker images we can make tests more portable, by sharing the whole execution environment, and remove the need for a local Ruby setup completely into the bargain.
 
 This proof-of-concept provides two Dockerfiles, for Puppet 4.x and Puppet 5.x respectively. They use the relevant Ruby version from the AIO.
 
