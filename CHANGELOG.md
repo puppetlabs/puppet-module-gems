@@ -1,3 +1,9 @@
+## 0.1.0
+
+- Increases `puppetlabs_spec_helper` minimum version.
+- Increases `metadata-json-lint` minimum version.
+- Adds example of using gems to build shared Docker images
+
 ## 0.0.10
 
 - Updates the puppetlabs\_spec\_helper version range.
