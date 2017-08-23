@@ -1,3 +1,8 @@
+## 0.1.1
+
+- Raise minimum version requirement of `puppetlabs_spec_helper`.
+- Lower maximum version allowed for `parallel_tests`.
+
 ## 0.1.0
 
 - Increases `puppetlabs_spec_helper` minimum version.
