@@ -18,6 +18,10 @@ dependencies:
           version: '~> 0.26'
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
+        - gem: puppet-lint-i18n
+          version: '~> 1.0'
+        - gem: puppet_pot_generator
+          version: '~> 1.0'
         - gem: puppet-syntax
           version: ['>= 2.4.1', '< 3.0.0']
         - gem: puppetlabs_spec_helper
@@ -34,6 +38,8 @@ dependencies:
           version: '~> 0.49'
         - gem: rubocop-rspec
           version: '~> 1.15'
+        - gem: rubocop-i18n
+          version: '~> 1.0'
         - gem: rspec_junit_formatter
           version: '~> 0.2'
       r2.1:
@@ -41,6 +47,8 @@ dependencies:
       r2.4:
     system:
       shared:
+        - gem: beaker-i18n_helper
+          version: '~> 1.1'
         - gem: beaker-puppet_install_helper
           version: ['>= 0.7.1', '< 1.0.0']
         - gem: beaker-module_install_helper
