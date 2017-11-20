@@ -1,3 +1,9 @@
+## 0.2.0
+
+- Adds gems needed for i18n development and testing.
+- Updates to build and publish scripts to push to stickler.
+- Adds new owners.
+
 ## 0.1.1
 
 - Raise minimum version requirement of `puppetlabs_spec_helper`.
