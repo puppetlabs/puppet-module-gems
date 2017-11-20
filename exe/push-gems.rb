@@ -10,19 +10,29 @@ OWNERS = [
 "melissa@puppetlabs.com",
 "bryan.jen@puppet.com",
 "david.schmitt@puppet.com",
-"hunter@puppet.com"
+"hunter@puppet.com",
+"paula@puppet.com",
+"helen@puppet.com"
 ]
 
-Dir["#{PKG_PATH}/*.gemspec"].each do |file|
-  gem_path = file.split('.gemspec')[0]
-  gem_name = File.basename(file).split('.gemspec')[0]
+STICKLER_MIRROR = 'http://rubygems.delivery.puppetlabs.net'.freeze
 
+Dir["#{PKG_PATH}/*.gem"].each do |file|
+  gem = File.basename(file).split('.gem').first
+  gem_version = gem.split('-').last
+  gem_name = gem.split("-#{gem_version}").first
+
+  puts "## Updating owners list for #{gem_name}."
   OWNERS.each do |owner|
     value = `gem owner --add #{owner} #{gem_name}`
     puts value
   end
 
-  gem = Dir["#{gem_path}*.gem"].join(" ")
-  value = `gem push #{gem}`
+  puts "## Pushing #{gem_name} to https://rubygems.org."
+  value = `gem push #{file}`
+  puts value
+
+  puts "## Mirroring #{gem_name} to #{STICKLER_MIRROR}."
+  value = `stickler mirror --server #{STICKLER_MIRROR} #{gem_name} --gem-version #{gem_version}`
   puts value
 end
