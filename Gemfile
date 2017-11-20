@@ -3,6 +3,7 @@ source ENV['GEM_SOURCE'] || "https://rubygems.org"
 group :development do
   gem 'pry',                    :require => false
   gem 'pry-byebug',             :require => false
+  gem 'stickler'
 end
 
 group :unit_test do
