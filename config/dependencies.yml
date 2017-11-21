@@ -18,8 +18,6 @@ dependencies:
           version: '~> 0.26'
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
-        - gem: puppet-lint-i18n
-          version: '~> 1.0'
         - gem: puppet_pot_generator
           version: '~> 1.0'
         - gem: puppet-syntax
