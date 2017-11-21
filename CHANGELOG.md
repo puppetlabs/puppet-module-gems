@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Removes `puppet-lint-i18n` from managed dependencies.
+
 ## 0.2.0
 
 - Adds gems needed for i18n development and testing.
