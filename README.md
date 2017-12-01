@@ -175,6 +175,28 @@ And for example, the gemspec for `test-gem-first-a-1.0.0.gem` will include depen
   - e.g. `git tag -a 0.1.2 -m "0.1.2"`
   - e.g. `git push upstream --tags`
 
+## Testing Changes
+
+- Check out a clean copy from master.
+- Run `bundle exec exe/build-gems.rb` to build the gems into the `pkg` directory.
+- Confirm `pkg` directory contains a variety of `.gem` and .`gemspec` files.
+- Locate a module that is making use of puppet-module-gems.
+- Edit the Gemfile and point the gems to the local copy of your gems.
+
+**Example**
+```ruby
+group :development do
+  gem "puppet-module-posix-default-r#{minor_version}",    :require => false, :platforms => "ruby", :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "puppet-module-win-default-r#{minor_version}",      :require => false, :platforms => ["mswin", "mingw", "x64_mingw"], :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "puppet-module-posix-dev-r#{minor_version}",        :require => false, :platforms => "ruby", :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "puppet-module-win-dev-r#{minor_version}", '0.0.7', :require => false, :platforms => ["mswin", "mingw", "x64_mingw"], :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "json_pure", '<= 2.0.1',                            :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.0.0')
+  gem "fast_gettext", '1.1.0',                            :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.1.0')
+  gem "fast_gettext",                                     :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.1.0')
+end
+```
+- Ensure the Gemfile is generated as expected by running `bundle install --path .bundle/gems/`
+
 ## Limitations
 
 Use of this utility has only been tested on Linux and OS-X platforms.
