@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Loosen the pin on rainbow
+
 ## 0.2.1
 
 - Removes `puppet-lint-i18n` from managed dependencies.
