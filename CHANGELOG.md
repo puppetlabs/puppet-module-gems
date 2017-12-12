@@ -1,6 +1,9 @@
-## 0.2.2
+## 0.2.3
 
 - Tighten rubocop version pins
+
+## 0.2.2
+
 - Loosen the pin on rainbow
 
 ## 0.2.1
