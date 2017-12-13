@@ -1,3 +1,7 @@
+## 0.2.4
+
+- Adjusts Rubocop dependency pins to fix dependency resolution issues
+
 ## 0.2.3
 
 - Tighten rubocop version pins
