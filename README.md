@@ -170,7 +170,7 @@ And for example, the gemspec for `test-gem-first-a-1.0.0.gem` will include depen
 - Run `bundle exec exe/build-gems.rb` to build the gems into the `pkg` directory.
 - Validate that the gems have build correctly.
 **The next step requires that you have Ownership permissions for these gems on rubygems.org, also requires access to internal Puppet network.**
-- Run `bundle exec exe/push-gems.rb` to update owners and publish to rubygems.org, as well as internal puppet stickler mirror.
+- Run `bundle exec exe/push-gems.rb` to update owners and publish to rubygems.org.
 - Tag the version and push tags to github.
   - e.g. `git tag -a 0.1.2 -m "0.1.2"`
   - e.g. `git push upstream --tags`
