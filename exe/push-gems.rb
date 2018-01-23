@@ -15,8 +15,6 @@ OWNERS = [
 "helen@puppet.com"
 ]
 
-STICKLER_MIRROR = 'http://rubygems.delivery.puppetlabs.net'.freeze
-
 Dir["#{PKG_PATH}/*.gem"].each do |file|
   gem = File.basename(file).split('.gem').first
   gem_version = gem.split('-').last
@@ -30,9 +28,5 @@ Dir["#{PKG_PATH}/*.gem"].each do |file|
 
   puts "## Pushing #{gem_name} to https://rubygems.org."
   value = `gem push #{file}`
-  puts value
-
-  puts "## Mirroring #{gem_name} to #{STICKLER_MIRROR}."
-  value = `stickler mirror --server #{STICKLER_MIRROR} #{gem_name} --gem-version #{gem_version}`
   puts value
 end
