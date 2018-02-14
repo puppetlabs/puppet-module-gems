@@ -1,6 +1,9 @@
 dependencies:
   shared:
     default:
+      shared:
+        - gem: ffi
+          version: '1.9.18'
       r2.1:
       r2.3:
       r2.4:
