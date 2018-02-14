@@ -1,3 +1,8 @@
+## 0.2.5
+
+- Pins ffi gem to 1.9.18 to avoid various compile errors in both windows and linux on 1.9.21.
+- Removes stickler from gem publish script.
+
 ## 0.2.4
 
 - Adjusts Rubocop dependency pins to fix dependency resolution issues
