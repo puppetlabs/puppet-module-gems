@@ -7,6 +7,7 @@ dependencies:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:
     dev:
       shared:
         - gem: gettext-setup
@@ -46,6 +47,7 @@ dependencies:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:
     system:
       shared:
         - gem: beaker-i18n_helper
@@ -61,11 +63,13 @@ dependencies:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:
   posix:
     default:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:
     dev:
       shared:
         - gem: simplecov
@@ -73,10 +77,12 @@ dependencies:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:
     system:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:
   win:
     default:
       shared:
@@ -95,11 +101,14 @@ dependencies:
           version: '1.7.2'
       r2.3:
       r2.4:
+      r2.5:
     dev:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:
     system:
       r2.1:
       r2.3:
       r2.4:
+      r2.5:

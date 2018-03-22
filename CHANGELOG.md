@@ -1,3 +1,7 @@
+## 0.3.0
+
+- Adds ruby 2.5 to the config build matrix.
+
 ## 0.2.5
 
 - Pins ffi gem to 1.9.18 to avoid various compile errors in both windows and linux on 1.9.21.
