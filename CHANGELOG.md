@@ -1,3 +1,7 @@
+## 0.3.1
+
+- Removes ffi pins.
+
 ## 0.3.0
 
 - Adds ruby 2.5 to the config build matrix.
