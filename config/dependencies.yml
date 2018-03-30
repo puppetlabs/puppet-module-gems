@@ -84,16 +84,6 @@ dependencies:
   win:
     default:
       shared:
-        - gem: win32-dir
-          version: '<= 0.4.9'
-        - gem: win32-eventlog
-          version: '<= 0.6.5'
-        - gem: win32-process
-          version: '<= 0.7.5'
-        - gem: win32-security
-          version: '<= 0.2.5'
-        - gem: win32-service
-          version: '<= 0.8.8'
       r2.1:
         - gem: nokogiri
           version: '1.7.2'
