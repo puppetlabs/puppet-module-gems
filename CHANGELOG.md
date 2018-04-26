@@ -1,3 +1,8 @@
+## 0.3.2
+
+- Removes unneeded windows pins that were there to support < 4.5 versions of Puppet.
+- Updates the puppetlabs\_spec\_helper gem pin to support the mock framework defaulting.
+
 ## 0.3.1
 
 - Removes ffi pins.
