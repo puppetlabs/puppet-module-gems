@@ -72,6 +72,8 @@ dependencies:
       shared:
         - gem: simplecov
           version: ['>= 0.14.1', '< 1.0.0']
+        - gem: puppet-blacksmith
+          version: '>= 3.4.0'
       r2.1:
       r2.3:
       r2.4:
