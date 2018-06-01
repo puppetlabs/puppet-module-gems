@@ -1,3 +1,7 @@
+## 0.3.3
+
+- Adds puppet-blacksmith to the development group for non-windows platforms.
+
 ## 0.3.2
 
 - Removes unneeded windows pins that were there to support < 4.5 versions of Puppet.
