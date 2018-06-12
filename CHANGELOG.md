@@ -1,3 +1,8 @@
+## 0.3.4
+
+- Update pin of puppetlabs\_spec\_helper to require fixes to fixtures cleanup.
+- Adds puppet-strings.
+
 ## 0.3.3
 
 - Adds puppet-blacksmith to the development group for non-windows platforms.
