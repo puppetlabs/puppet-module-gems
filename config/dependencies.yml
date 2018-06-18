@@ -8,6 +8,8 @@ dependencies:
       r2.5:
     dev:
       shared:
+        - gem: codecov
+          version: '~> 0.1.10'
         - gem: gettext-setup
           version: '~> 0.26'
         - gem: metadata-json-lint
@@ -42,6 +44,8 @@ dependencies:
           version: '~> 1.16.0'
         - gem: rspec_junit_formatter
           version: '~> 0.2'
+        - gem: simplecov-console
+          version: '~> 0.4.2'
         - gem: specinfra
           version: '2.67.3'
       r2.1:
