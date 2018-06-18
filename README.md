@@ -36,7 +36,7 @@ Install the development gems:
 
 ### Building the gems
 
-To build the gems with the default configuration, execute the script `bundle exec exe/puppet-module-gems.rb`. The gemspec files and gems will be generated in the `pkg` directory.
+To build the gems with the default configuration, execute the script `bundle exec exe/build-gems.rb`. The gemspec files and gems will be generated in the `pkg` directory. Use the `push-gems.rb` from the same location to push to rubygems.org, if you are a maintainer.
 
 ### Customizing dependency gems
 

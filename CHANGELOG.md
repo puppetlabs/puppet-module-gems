@@ -1,3 +1,8 @@
+## 0.3.5
+
+- Add codecov and simplecov-console to the default gems.
+- Bump puppetlabs_spec_helper to 2.9.0 to get the coverage functionality
+
 ## 0.3.4
 
 - Update pin of puppetlabs\_spec\_helper to require fixes to fixtures cleanup.
