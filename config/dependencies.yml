@@ -18,6 +18,8 @@ dependencies:
           version: ['>= 1.0.0', '< 1.2.0']
         - gem: parallel_tests
           version: ['>= 2.14.1', '< 2.14.3']
+        - gem: parser
+          version: '~> 2.5.1.2'
         - gem: pry
           version: '~> 0.10.4'
         - gem: puppet-lint
