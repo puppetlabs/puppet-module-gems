@@ -8,6 +8,8 @@ dependencies:
       r2.5:
     dev:
       shared:
+        - gem: bundler
+          version: '< 1.16.3'
         - gem: codecov
           version: '~> 0.1.10'
         - gem: gettext-setup
