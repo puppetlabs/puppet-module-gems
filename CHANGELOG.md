@@ -1,3 +1,7 @@
+## 0.3.6
+
+- Add net-telnet pin for Ruby 2.1 on Windows.
+
 ## 0.3.5
 
 - Add codecov and simplecov-console to the default gems.
