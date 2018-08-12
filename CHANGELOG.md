@@ -1,3 +1,7 @@
+## 0.3.7
+
+- Extend net-telnet pin for Ruby 2.1 on all platforms.
+
 ## 0.3.6
 
 - Add net-telnet pin for Ruby 2.1 on Windows.
