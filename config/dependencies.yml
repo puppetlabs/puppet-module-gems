@@ -51,6 +51,8 @@ dependencies:
         - gem: specinfra
           version: '2.67.3'
       r2.1:
+        - gem: net-telnet
+          version: '~> 0.1.1'
       r2.3:
       r2.4:
       r2.5:
@@ -102,8 +104,6 @@ dependencies:
       r2.5:
     dev:
       r2.1:
-        - gem: net-telnet
-          version: '~> 0.1.1'
       r2.3:
       r2.4:
       r2.5:
