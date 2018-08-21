@@ -1,3 +1,7 @@
+## 0.3.9
+
+- Pin to beaker 3, (and helper gems) for system tests on all platforms.
+
 ## 0.3.8
 
 - Pin fog-openstack for Ruby 2.1 on all platforms.
