@@ -1,3 +1,7 @@
+## 0.3.11
+
+- Pin beaker-puppet explicitly.
+
 ## 0.3.10
 
 - Pin to beaker 4, (and helper gems) for system tests on all platforms.
