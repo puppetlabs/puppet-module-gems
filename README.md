@@ -200,17 +200,18 @@ end
 ## Testing changes on a bigger scale
 To test potentially harmful changes with a module on travis / appveyor / another build system. You can use a third party gem repository. 
 
--bump your version of config.info to something higher than the current release
+- bump your version of config.info to something higher than the current release
 - make your changes in puppet-module-gems
 - build your packages
-- open your gemfury account and upload the gems ie https://manage.fury.io/dashboard/tphoney
-- Update the module and edit the gemfile to point at gemfury
+- open your gemfury account and upload the gems ie https://manage.fury.io/dashboard/<user>
+- Update the module and edit its gemfile to point at gemfury
 ```
-source 'https://token@gem.fury.io/tphoney/'
-gem "puppet-module-posix-system-r#{minor_version}",                            require: false, platforms: [:ruby], :source => "https://token@gem.fury.io/tphoney/"
+source 'https://<token>@gem.fury.io/<user>/'
+gem "puppet-module-posix-system-r#{minor_version}", require: false, platforms: [:ruby], :source => "https://<token>@gem.fury.io/<user>/"
 ```
+NB remember to use your actual token.
 - test locally, then create your pr for the module. 
-- check travis / appveyor / build system for pass/fails, 
+- check travis / appveyor / build system for your pass / fails. 
 
 ## Limitations
 
