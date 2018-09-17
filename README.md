@@ -198,6 +198,7 @@ end
 - Ensure the Gemfile is generated as expected by running `bundle install --path .bundle/gems/`
 
 ## Testing changes on a bigger scale
+
 To test potentially harmful changes with a module on travis / appveyor / another build system. You can use a third party gem repository. 
 
 - bump your version of config.info to something higher than the current release
