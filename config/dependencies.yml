@@ -71,7 +71,7 @@ dependencies:
         - gem: beaker
           version: ['>= 4.0.0','< 5.0.0']
         - gem: beaker-puppet
-          version: '1.1.0' 
+          version: ['>= 1.6.0','< 2.0.0']
         - gem: beaker-abs
           version: ['>= 0.4.0','< 1.0.0']
         - gem: beaker-pe
