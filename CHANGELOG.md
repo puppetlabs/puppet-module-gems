@@ -1,3 +1,7 @@
+## 0.3.12
+
+- Bump version beaker-puppet, for puppet 6 compatibility.
+
 ## 0.3.11
 
 - Pin beaker-puppet explicitly.
