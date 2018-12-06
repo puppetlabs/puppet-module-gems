@@ -1,3 +1,7 @@
+## 0.3.13
+
+- Bump of specinfra version, for compatibility with SLES 15.
+
 ## 0.3.12
 
 - Bump version beaker-puppet, for puppet 6 compatibility.
