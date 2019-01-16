@@ -1,3 +1,7 @@
+## 0.3.14
+
+- Bump of specinfra version, to include fix for checking service status on SLES 15.
+
 ## 0.3.13
 
 - Bump of specinfra version, for compatibility with SLES 15.
