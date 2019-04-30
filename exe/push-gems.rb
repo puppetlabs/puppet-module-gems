@@ -13,7 +13,8 @@ OWNERS = [
 "hunter@puppet.com",
 "paula@puppet.com",
 "helen@puppet.com",
-"david.swan@puppet.com"
+"david.swan@puppet.com",
+"eimhin.laverty@puppet.com"
 ]
 
 Dir["#{PKG_PATH}/*.gem"].each do |file|
