@@ -1,3 +1,8 @@
+## 0.3.15
+
+- Add dependency_checker gem
+- Bump of slecinfra version, to include fixes for checking password info on SLES 11 and Solaris 11
+
 ## 0.3.14
 
 - Bump of specinfra version, to include fix for checking service status on SLES 15.
