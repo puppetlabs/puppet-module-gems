@@ -30,6 +30,8 @@ dependencies:
           version: '~> 1.0'
         - gem: puppet-strings
           version: '~> 2.0'
+        - gem: puppet-resource_api
+          version: '~> 1.6' # 1.6 is still supported for puppet6/johnson/2019.0 until August 2019
         - gem: puppet-syntax
           version: ['>= 2.4.1', '< 3.0.0']
         - gem: puppetlabs_spec_helper
