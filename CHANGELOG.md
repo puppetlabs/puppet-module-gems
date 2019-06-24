@@ -1,3 +1,9 @@
+## 0.4.0
+
+- Add puppet-resource_api to default gems
+- Add puppet_litmus to development gems
+- Add build configuration for Ruby 2.6
+
 ## 0.3.15
 
 - Add dependency_checker gem
