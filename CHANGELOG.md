@@ -1,3 +1,8 @@
+## 0.4.1
+
+- Only include puppet\_litmus on Ruby 2.5 and Ruby 2.6
+- Bump FacterDB and rspec-puppet-facts versions
+
 ## 0.4.0
 
 - Add puppet-resource_api to default gems
