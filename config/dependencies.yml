@@ -13,6 +13,8 @@ dependencies:
           version: '~> 0.1.10'
         - gem: dependency_checker
           version: '~> 0.2'
+        - gem: facterdb
+          version: '~> 0.8.1'
         - gem: gettext-setup
           version: '~> 0.26'
         - gem: metadata-json-lint
@@ -42,7 +44,7 @@ dependencies:
         - gem: rspec-puppet
           version: ['>= 2.3.2', '< 3.0.0']
         - gem: rspec-puppet-facts
-          version: '~> 1.8'
+          version: '~> 1.9.5'
         - gem: rubocop
           version: '~> 0.49.0'
         - gem: rubocop-i18n
