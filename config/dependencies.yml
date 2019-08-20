@@ -113,6 +113,8 @@ dependencies:
       r2.1:
         - gem: fog-openstack
           version: '0.1.25'
+        - gem: net-ssh
+          version: '~> 4.2.0' # Required for older Ruby version
       r2.3:
       r2.4:
       r2.5:
