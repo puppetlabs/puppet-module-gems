@@ -3,7 +3,7 @@
 require_relative '../lib/puppet-module-gems/constants.rb'
 include PuppetModuleGems::Constants
 
-OWNERS = [ 
+OWNERS = [
 "morgan@puppetlabs.com",
 "bradejr@puppetlabs.com",
 "stahnma@puppetlabs.com",
@@ -17,7 +17,7 @@ OWNERS = [
 "eimhin.laverty@puppet.com",
 "jesse@puppetlabs.com",
 "tim@sharpe.id.au",
-"glenn.sarti@outlook.com",
+"glenn.sarti@puppet.com",
 "loredana.ionce@puppet.com",
 ]
 
