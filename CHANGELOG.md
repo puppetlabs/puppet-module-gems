@@ -1,6 +1,11 @@
+## 0.4.2
+
+- Add net-ssh to ruby 2.1 for system tests
+- Add activesupport to ruby 2.3 for github-changelog-generator
+
 ## 0.4.1
 
-- Only include puppet\_litmus on Ruby 2.5 and Ruby 2.6
+- Only include puppet_litmus on Ruby 2.5 and Ruby 2.6
 - Bump FacterDB and rspec-puppet-facts versions
 
 ## 0.4.0
