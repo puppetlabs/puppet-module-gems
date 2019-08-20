@@ -14,11 +14,17 @@ OWNERS = [
 "paula@puppet.com",
 "helen@puppet.com",
 "david.swan@puppet.com",
-"eimhin.laverty@puppet.com",
 "jesse@puppetlabs.com",
 "tim@sharpe.id.au",
 "glenn.sarti@puppet.com",
 "loredana.ionce@puppet.com",
+"florin.dragos@puppet.com",
+"daniel.milan@puppet.com",
+"sheena@puppet.com",
+"michael.lombardi@puppet.com",
+"william.hurt@puppet.com",
+"erick@puppet.com",
+"tp@puppet.com",
 ]
 
 Dir["#{PKG_PATH}/*.gem"].each do |file|
