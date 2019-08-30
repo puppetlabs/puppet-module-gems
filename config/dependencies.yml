@@ -67,9 +67,13 @@ dependencies:
       r2.3:
       r2.4:
       r2.5:
+        - gem: pry-byebug
+          version: ['>= 3.5.1', '< 4.0.0']
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
       r2.6:
+        - gem: pry-byebug
+          version: ['>= 3.5.1', '< 4.0.0']
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
     system:
