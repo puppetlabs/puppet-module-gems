@@ -29,6 +29,8 @@ dependencies:
           version: '~> 2.5.1.2'
         - gem: pry
           version: '~> 0.10.4'
+        - gem: puppet-debugger
+          version: '~> 0.14'  
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
         - gem: puppet_pot_generator
