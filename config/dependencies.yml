@@ -16,7 +16,7 @@ dependencies:
         - gem: dependency_checker
           version: '~> 0.2'
         - gem: facterdb
-          version: '~> 0.8.1'
+          version: ['>= 0.8.1', '< 2.0.0']
         - gem: gettext-setup
           version: '~> 0.26'
         - gem: metadata-json-lint
