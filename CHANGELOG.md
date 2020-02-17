@@ -1,3 +1,10 @@
+## 0.4.3
+
+- Update version range for facterdb to '>= 0.8.1', '< 2.0.0'
+- Bump of rspec-puppet-facts to ~> 1.10.0
+- Bump of specinfra version to support EL8
+- Add puppet-debugger to development gems
+
 ## 0.4.2
 
 - Add net-ssh to ruby 2.1 for system tests
