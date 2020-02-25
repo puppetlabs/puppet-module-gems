@@ -1,3 +1,7 @@
+## 0.4.4
+
+- Avoid concurrent-ruby 1.1.6 which is triggering MRI segfaults 
+
 ## 0.4.3
 
 - Update version range for facterdb to '>= 0.8.1', '< 2.0.0'
