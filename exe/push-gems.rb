@@ -25,7 +25,8 @@ OWNERS = [
 "william.hurt@puppet.com",
 "erick@puppet.com",
 "tp@puppet.com",
-"ciaran.mccrisken@puppet.com",  
+"ciaran.mccrisken@puppet.com",
+"sheena@puppet.com",  
 ]
 
 Dir["#{PKG_PATH}/*.gem"].each do |file|
