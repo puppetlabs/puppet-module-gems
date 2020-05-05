@@ -33,7 +33,7 @@ dependencies:
         - gem: pry
           version: '~> 0.10.4'
         - gem: puppet-debugger
-          version: '~> 0.14'
+          version: '~> 0.18'
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
         - gem: puppet_pot_generator
