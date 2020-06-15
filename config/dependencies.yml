@@ -7,6 +7,7 @@ dependencies:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
     dev:
       shared:
         - gem: activesupport
@@ -79,6 +80,9 @@ dependencies:
       r2.6:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
+      r2.7:
+        - gem: puppet_litmus
+          version: ['>= 0.4.0', '< 1.0.0']
     system:
       shared:
         - gem: beaker-i18n_helper
@@ -128,6 +132,7 @@ dependencies:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
   posix:
     default:
       r2.1:
@@ -135,6 +140,7 @@ dependencies:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
     dev:
       shared:
         - gem: simplecov
@@ -146,12 +152,14 @@ dependencies:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
     system:
       r2.1:
       r2.3:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
   win:
     default:
       shared:
@@ -162,15 +170,18 @@ dependencies:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
     dev:
       r2.1:
       r2.3:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
     system:
       r2.1:
       r2.3:
       r2.4:
       r2.5:
       r2.6:
+      r2.7:
