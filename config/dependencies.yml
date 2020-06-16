@@ -34,8 +34,6 @@ dependencies:
         - gem: parallel_tests
           version: ['>= 2.14.1', '< 2.14.3']
           reason: 'part of the default toolset install'
-        - gem: parser
-          version: '~> 2.5.1.2'
         - gem: pry
           version: '~> 0.10.4'
           reason: 'part of the default toolset install'
