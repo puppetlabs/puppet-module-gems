@@ -15,7 +15,7 @@ dependencies:
           reason: 'used for coverage reporting; 0.1.10 stopped failing the build on upload failures'
         - gem: 'concurrent-ruby'
           version: '!= 1.1.6'
-          reason: 'https://github.com/ruby-concurrency/concurrent-ruby/issues/849'
+          reason: 'used by puppet and many others; skip 1.1.6 because of this issue: https://github.com/ruby-concurrency/concurrent-ruby/issues/849'
         - gem: dependency_checker
           version: '~> 0.2'
         - gem: facterdb
