@@ -86,6 +86,9 @@ dependencies:
           version: '2.82.2'
           reason: 'part of the default toolset install'
       r2.1:
+        - gem: net-ssh
+          version: '~> 4.2.0'
+          reason: "older version required for Ruby 2.1"
         - gem: net-telnet
           version: '~> 0.1.1'
         - gem: i18n
@@ -163,7 +166,8 @@ dependencies:
         - gem: fog-openstack
           version: '0.1.25'
         - gem: net-ssh
-          version: '~> 4.2.0' # Required for older Ruby version
+          version: '~> 4.2.0'
+          reason: "Required for Ruby 2.1"
       r2.3:
       r2.4:
       r2.5:
