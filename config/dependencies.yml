@@ -18,6 +18,7 @@ dependencies:
           reason: 'used by puppet and many others; skip 1.1.6 because of this issue: https://github.com/ruby-concurrency/concurrent-ruby/issues/849'
         - gem: dependency_checker
           version: '~> 0.2'
+          reason: 'part of the default toolset install'
         - gem: facterdb
           version: ['>= 0.8.1', '< 2.0.0']
         - gem: gettext-setup
