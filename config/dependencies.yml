@@ -10,8 +10,6 @@ dependencies:
       r2.7:
     dev:
       shared:
-        - gem: activesupport
-          version: ['>=5.0.0', '< 6.0.0']
         - gem: codecov
           version: '~> 0.1.10'
         - gem: 'concurrent-ruby'
@@ -73,14 +71,29 @@ dependencies:
         - gem: i18n
           version: ['>= 1.0.0', '< 1.5.2']
       r2.3:
+        - gem: activesupport
+          version: ['>=5.0.0', '< 6.0.0']
+          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
       r2.4:
+        - gem: activesupport
+          version: ['>=5.0.0', '< 6.0.0']
+          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
       r2.5:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
+        - gem: activesupport
+          version: ['>=5.0.0', '< 6.0.0']
+          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
       r2.6:
+        - gem: activesupport
+          version: '~> 6.0'
+          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
       r2.7:
+        - gem: activesupport
+          version: '~> 6.0'
+          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
     system:
