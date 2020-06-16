@@ -183,8 +183,6 @@ dependencies:
       r2.7:
     dev:
       shared:
-        - gem: simplecov
-          version: ['>= 0.14.1', '< 1.0.0']
         - gem: puppet-blacksmith
           version: '>= 3.4.0'
           reason: 'part of the default toolset install'
