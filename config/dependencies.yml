@@ -12,7 +12,7 @@ dependencies:
       shared:
         - gem: codecov
           version: '~> 0.1.10'
-          reason: 'used for coverage reporting; 0.1.10 stopped failing the build on upload failures'
+          reason: 'part of the default toolset install; 0.1.10 stopped failing the build on upload failures'
         - gem: 'concurrent-ruby'
           version: '!= 1.1.6'
           reason: 'used by puppet and many others; skip 1.1.6 because of this issue: https://github.com/ruby-concurrency/concurrent-ruby/issues/849'
@@ -21,52 +21,73 @@ dependencies:
           reason: 'part of the default toolset install'
         - gem: facterdb
           version: ['>= 0.8.1', '< 2.0.0']
+          reason: 'part of the default toolset install'
         - gem: gettext-setup
           version: '~> 0.26'
+          reason: 'part of the default toolset install'
         - gem: metadata-json-lint
           version: ['>= 2.0.2', '< 3.0.0']
+          reason: 'part of the default toolset install'
         - gem: mocha
           version: ['>= 1.0.0', '< 1.2.0']
+          reason: 'part of the legacy toolset install; some breakage with 1.2.0 made us stop updating'
         - gem: parallel_tests
           version: ['>= 2.14.1', '< 2.14.3']
+          reason: 'part of the default toolset install'
         - gem: parser
           version: '~> 2.5.1.2'
         - gem: pry
           version: '~> 0.10.4'
+          reason: 'part of the default toolset install'
         - gem: puppet-debugger
           version: '~> 0.18'
+          reason: 'part of the default toolset install'
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
+          reason: 'part of the default toolset install'
         - gem: puppet_pot_generator
           version: '~> 1.0'
+          reason: 'part of the default toolset install'
         - gem: puppet-strings
           version: '~> 2.0'
+          reason: 'part of the default toolset install'
         - gem: puppet-resource_api
           version: '~> 1.6' # 1.6 is still supported for puppet6/johnson/2019.0 until August 2019
+          reason: 'part of the default toolset install'
         - gem: puppet-syntax
           version: ['>= 2.4.1', '< 3.0.0']
+          reason: 'part of the default toolset install'
         - gem: puppetlabs_spec_helper
           version: ['>= 2.9.0', '< 3.0.0']
+          reason: 'part of the default toolset install'
         - gem: rainbow
           version: '~> 2.0'
         - gem: rspec-puppet
           version: ['>= 2.3.2', '< 3.0.0']
+          reason: 'part of the default toolset install'
         - gem: rspec-puppet-facts
           version: '~> 1.10.0'
+          reason: 'part of the default toolset install'
         - gem: rubocop
           version: '~> 0.49.0'
+          reason: 'part of the default toolset install'
         - gem: rubocop-i18n
           version: '~> 1.2.0'
+          reason: 'part of the default toolset install'
         - gem: rubocop-rspec
           version: '~> 1.16.0'
+          reason: 'part of the default toolset install'
         - gem: rspec_junit_formatter
           version: '~> 0.2'
         - gem: serverspec
           version: '~> 2.41'
+          reason: 'part of the default toolset install'
         - gem: simplecov-console
           version: '~> 0.4.2'
+          reason: 'part of the default toolset install'
         - gem: specinfra
           version: '2.82.2'
+          reason: 'part of the default toolset install'
       r2.1:
         - gem: net-telnet
           version: '~> 0.1.1'
@@ -81,23 +102,26 @@ dependencies:
           version: ['>=5.0.0', '< 6.0.0']
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
       r2.5:
-        - gem: puppet_litmus
-          version: ['>= 0.4.0', '< 1.0.0']
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
+        - gem: puppet_litmus
+          version: ['>= 0.4.0', '< 1.0.0']
+          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
       r2.6:
         - gem: activesupport
           version: '~> 6.0'
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
+          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
       r2.7:
         - gem: activesupport
           version: '~> 6.0'
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
+          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
     system:
       shared:
         - gem: beaker-i18n_helper
@@ -162,6 +186,7 @@ dependencies:
           version: ['>= 0.14.1', '< 1.0.0']
         - gem: puppet-blacksmith
           version: '>= 3.4.0'
+          reason: 'part of the default toolset install'
       r2.1:
       r2.3:
       r2.4:
