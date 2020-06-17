@@ -175,6 +175,9 @@ dependencies:
         - gem: net-ssh
           version: '~> 4.2.0'
           reason: "Required for Ruby 2.1"
+        - gem: nokogiri
+          version: '< 1.10.0'
+          reason: "Ruby 2.1 support was dropped in 1.10.0"
       r2.3:
       r2.4:
       r2.5:
