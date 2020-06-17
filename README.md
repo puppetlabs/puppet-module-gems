@@ -67,9 +67,9 @@ group :development do
 end
 
 group :system_tests do
-  gem 'beaker-puppet_install_helper',                                            :require => false
-  gem 'beaker-module_install_helper',                                            :require => false
-  gem 'master_manipulator',                                                      :require => false
+  gem 'beaker-puppet_install_helper', :require => false
+  gem 'beaker-module_install_helper', :require => false
+  gem 'master_manipulator',           :require => false
 end
 ```
 
@@ -178,41 +178,47 @@ And for example, the gemspec for `test-gem-first-a-1.0.0.gem` will include depen
 ## Testing Changes
 
 - Check out a clean copy from master.
+- Clean out the contents of the `pkg` directory.
 - Run `bundle exec exe/build-gems.rb` to build the gems into the `pkg` directory.
 - Confirm `pkg` directory contains a variety of `.gem` and .`gemspec` files.
 - Locate a module that is making use of puppet-module-gems.
-- Edit the Gemfile and point the gems to the local copy of your gems.
+- Edit the Gemfile and point the gems to the local copy of your gems, using the `:path` directive.
 
 **Example**
 ```ruby
 group :development do
-  gem "puppet-module-posix-default-r#{minor_version}",    :require => false, :platforms => "ruby", :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
-  gem "puppet-module-win-default-r#{minor_version}",      :require => false, :platforms => ["mswin", "mingw", "x64_mingw"], :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
-  gem "puppet-module-posix-dev-r#{minor_version}",        :require => false, :platforms => "ruby", :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
-  gem "puppet-module-win-dev-r#{minor_version}", '0.0.7', :require => false, :platforms => ["mswin", "mingw", "x64_mingw"], :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
-  gem "json_pure", '<= 2.0.1',                            :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.0.0')
-  gem "fast_gettext", '1.1.0',                            :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.1.0')
-  gem "fast_gettext",                                     :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.1.0')
+  gem "puppet-module-posix-default-r#{minor_version}",    require: false, platforms: "ruby", path: '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "puppet-module-win-default-r#{minor_version}",      require: false, platforms: ["mswin", "mingw", "x64_mingw"], path:  '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "puppet-module-posix-dev-r#{minor_version}",        require: false, platforms: "ruby", :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "puppet-module-win-dev-r#{minor_version}", '0.0.7', require: false, platforms: ["mswin", "mingw", "x64_mingw"], :path => '/Users/paula/workspace/puppet-module-gems/pkg/'
+  gem "json_pure", '<= 2.0.1',                            require: false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.0.0')
+  gem "fast_gettext", '1.1.0',                            require: false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.1.0')
+  gem "fast_gettext",                                     require: false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.1.0')
 end
 ```
-- Ensure the Gemfile is generated as expected by running `bundle install --path .bundle/gems/`
+- Ensure the `Gemfile.lock` is generated as expected by running `bundle install`.
+- Compare the installed gems vs earlier versions by saving and comparing `Gemfile.lock` files from different incantations.
 
 ## Testing changes on a bigger scale
 
-To test potentially harmful changes with a module on travis / appveyor / another build system. You can use a third party gem repository. 
+To test potentially harmful changes with modules on travis, appveyor, or another build systems. You can use a third party gem repository. We recommend using the [cloudsmith](https://cloudsmith.com/) offering, as it provides native integration into the ruby tool set. Sign up there with your github account and create a open source repository pointing back to this github repo.
 
-- bump your version of config.info to something higher than the current release
+- copy your API key (from Account -> Settings -> API Settings -> API key) into `~/.gem/credentials` as `:cloudsmith: "Token _the_api_key_here_"`
+- bump your version of config.info to something higher than the current release (e.g. '0.4.4' -> '0.4.5'; note that bundler doesn't deal with pre-release versions)
 - make your changes in puppet-module-gems
-- build your packages
-- open your gemfury account and upload the gems ie https://manage.fury.io/dashboard/<user>
-- Update the module and edit its gemfile to point at gemfury
+- build your packages as described above
+- Upload all the gems by running
+  ```
+  for i in pkg/puppet-module-*.gem; do gem push $i --host https://ruby.cloudsmith.io/david-schmitt/pmg-test --key cloudsmith & done; wait
+  ```
+  or similar in your shell
+- Update the module and edit its Gemfile to retrieve the puppet-module-gems from `source: 'https://dl.cloudsmith.io/public/david-schmitt/pmg-test/ruby/'`:
 ```
-source 'https://<token>@gem.fury.io/<user>/'
-gem "puppet-module-posix-system-r#{minor_version}", require: false, platforms: [:ruby], :source => "https://<token>@gem.fury.io/<user>/"
+gem "puppet-module-posix-system-r#{minor_version}", require: false, platforms: [:ruby], source: 'https://dl.cloudsmith.io/public/david-schmitt/pmg-test/ruby/'
 ```
-NB remember to use your actual token.
-- test locally, then create your pr for the module. 
-- check travis / appveyor / build system for your pass / fails. 
+NB remember to use your actual token and repo URL and unset the
+- test locally, then create your pr for the module.
+- check travis / appveyor / build system for your pass / fails.
 
 ## Limitations
 
@@ -221,4 +227,4 @@ Use of this utility has only been tested on Linux and OS-X platforms.
 
 ## Support
 
-This utility is maintained and developed by the Puppet SDK and Puppet Modules team. Please file an [issue](https://github.com/puppetlabs/puppet-module-gems/issues) for support. [Contributions](https://github.com/puppetlabs/puppet-module-gems/blob/master/CONTRIBUTING.md) are also welcomed!
+These scripts and gems are maintained by the [IAC team](https://puppetlabs.github.io/iac/). Please file an [issue](https://github.com/puppetlabs/puppet-module-gems/issues) for support. [Contributions](https://github.com/puppetlabs/puppet-module-gems/blob/master/CONTRIBUTING.md) are also welcomed!
