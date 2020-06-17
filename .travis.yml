@@ -1,6 +1,61 @@
+---
+os: linux
 language: ruby
-script: "bundle exec rspec spec"
+cache: bundler
+
+stages:
+  - smoke
+  - test
+
+rvm:
+  - 2.7
+  - 2.5
+  - 2.4
+  - 2.3
+  - 2.1
+
+env:
+  - SET=dev
+  - SET=system
+
+script: |
+  # test installing the gems from $SET on this ruby version
+  set -e
+
+  echo create gems
+  bundle exec ./exe/build-gems.rb
+
+  mkdir test
+  cd test
+  export BUNDLE_GEMFILE=./Gemfile
+
+  cat <<EOF >Gemfile
+  source 'https://rubygems.org'
+  ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
+  minor_version = ruby_version_segments[0..1].join('.')
+  gem "puppet-module-posix-default-r#{minor_version}", :path => '../pkg'
+  gem "puppet-module-posix-dev-r#{minor_version}",     :path => '../pkg'
+  gem "puppet-module-posix-system-r#{minor_version}",  :path => '../pkg' if ENV['SET'] == 'system'
+  EOF
+
+  echo setting up gem path for caching
+  bundle config path ../vendor/bundle
+
+  cat Gemfile
+
+  echo testing installability of the puppet-module-gems
+  bundle install
+
+  cat Gemfile.lock
+
+jobs:
+  include:
+    - stage: smoke
+      name: "Make sure that gems build"
+      script: bundle exec ./exe/build-gems.rb
+    - stage: smoke
+      name: "Unit Tests"
+      script: bundle exec rspec spec
+
 notifications:
   email: false
-rvm:
-  - 2.3.1
