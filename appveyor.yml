@@ -1,0 +1,66 @@
+---
+version: 1.1.x.{build}
+
+cache:
+  - vendor/bundle
+
+environment:
+  matrix:
+    - RUBY_VERSION: 21-x64
+      SET: dev
+    - RUBY_VERSION: 21-x64
+      SET: system
+    - RUBY_VERSION: 23-x64
+      SET: dev
+    - RUBY_VERSION: 23-x64
+      SET: system
+    - RUBY_VERSION: 24-x64
+      SET: dev
+    - RUBY_VERSION: 24-x64
+      SET: system
+    - RUBY_VERSION: 25-x64
+      SET: dev
+    - RUBY_VERSION: 25-x64
+      SET: system
+
+install:
+  - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+  - bundle install --jobs 4 --retry 2
+  - bundle exec rspec spec
+  - bundle exec ruby ./exe/build-gems.rb
+
+build: off
+
+test_script:
+  - ps: |
+      New-Item test -ItemType Directory
+
+      Set-Location test
+
+      Set-Content Gemfile -Value @'
+      source 'https://rubygems.org'
+      ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
+      minor_version = ruby_version_segments[0..1].join('.')
+      gem "puppet-module-posix-default-r#{minor_version}", :path => '../pkg'
+      gem "puppet-module-posix-dev-r#{minor_version}",     :path => '../pkg'
+      gem "puppet-module-posix-system-r#{minor_version}",  :path => '../pkg' if ENV['SET'] == 'system'
+      '@
+
+      Write-Host "setting up gem path for caching"
+      & bundle config path ../vendor/bundle
+      if ($LastExitCode -ne 0) { exit $LastExitCode }
+
+      Get-Content ./Gemfile | Write-Host
+      Write-Host "testing installability of the puppet-module-gems"
+      & bundle install
+      if ($LastExitCode -ne 0) { exit $LastExitCode }
+
+      Get-Content ./Gemfile.lock | Write-Host
+
+notifications:
+  - provider: Email
+    to:
+      - nobody@example.com
+    on_build_success: false
+    on_build_failure: false
+    on_build_status_changed: false
