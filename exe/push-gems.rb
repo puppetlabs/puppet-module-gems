@@ -6,7 +6,7 @@ include PuppetModuleGems::Constants
 OWNERS = [
 "bradejr@puppetlabs.com",
 "ciaran.mccrisken@puppet.com",
-"daniel.milan@puppet.com",
+"daniel.carabas@puppet.com",
 "david.schmitt@puppet.com",
 "david.swan@puppet.com",
 "loredana.ionce@puppet.com",
