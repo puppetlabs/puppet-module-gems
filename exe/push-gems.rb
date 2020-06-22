@@ -4,17 +4,17 @@ require_relative '../lib/puppet-module-gems/constants.rb'
 include PuppetModuleGems::Constants
 
 OWNERS = [
-"morgan@puppetlabs.com",
 "bradejr@puppetlabs.com",
+"ciaran.mccrisken@puppet.com",
+"daniel.milan@puppet.com",
 "david.schmitt@puppet.com",
-"paula@puppet.com",
 "david.swan@puppet.com",
 "loredana.ionce@puppet.com",
-"daniel.milan@puppet.com",
 "michael.lombardi@puppet.com",
-"tp@puppet.com",
-"ciaran.mccrisken@puppet.com",
+"morgan@puppetlabs.com",
+"paula@puppet.com",
 "sheena@puppet.com",
+"tp@puppet.com",
 ]
 
 Dir["#{PKG_PATH}/*.gem"].each do |file|
