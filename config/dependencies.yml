@@ -179,6 +179,9 @@ dependencies:
           version: '< 1.10.0'
           reason: "Ruby 2.1 support was dropped in 1.10.0"
       r2.3:
+        - gem: 'byebug'
+          version: '<= 11.0.1'
+          reason: "byebug is a transitive dependency; v 11.0.1 is the last one to support ruby 2.3"
       r2.4:
       r2.5:
       r2.6:
