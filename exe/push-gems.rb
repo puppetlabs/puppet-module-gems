@@ -11,7 +11,6 @@ OWNERS = [
 "david.swan@puppet.com",
 "loredana.ionce@puppet.com",
 "daniel.milan@puppet.com",
-"sheena@puppet.com",
 "michael.lombardi@puppet.com",
 "tp@puppet.com",
 "ciaran.mccrisken@puppet.com",
