@@ -1,6 +1,11 @@
+## 0.5.0
+
+- Add Ruby 2.7 support
+- General refresh of depedencies for easier future maintenance (see #130 for the gory details)
+
 ## 0.4.4
 
-- Avoid concurrent-ruby 1.1.6 which is triggering MRI segfaults 
+- Avoid concurrent-ruby 1.1.6 which is triggering MRI segfaults
 
 ## 0.4.3
 
