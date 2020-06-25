@@ -199,7 +199,7 @@ end
 - Ensure the `Gemfile.lock` is generated as expected by running `bundle install`.
 - Compare the installed gems vs earlier versions by saving and comparing `Gemfile.lock` files from different incantations.
 
-## Testing changes on a bigger scale
+## Testing changes on a bigger scale
 
 To test potentially harmful changes with modules on travis, appveyor, or another build systems. You can use a third party gem repository. We recommend using the [cloudsmith](https://cloudsmith.com/) offering, as it provides native integration into the ruby tool set. Sign up there with your github account and create a open source repository pointing back to this github repo.
 
