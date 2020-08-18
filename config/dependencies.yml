@@ -110,7 +110,7 @@ dependencies:
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: simplecov
           version: '< 0.19.0'
-          reason: 'simplecov dropped support for Ruby 2.4 from v0.19.0 onwards'
+          reason: 'IAC-1081: simplecov v0.19.0 causing build to hang on TravisCI'
       r2.5:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -118,6 +118,9 @@ dependencies:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: 'IAC-1081: simplecov v0.19.0 causing build to hang on TravisCI'
       r2.6:
         - gem: activesupport
           version: '~> 6.0'
@@ -125,6 +128,9 @@ dependencies:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: 'IAC-1081: simplecov v0.19.0 causing build to hang on TravisCI'
       r2.7:
         - gem: activesupport
           version: '~> 6.0'
@@ -132,6 +138,9 @@ dependencies:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: 'IAC-1081: simplecov v0.19.0 causing build to hang on TravisCI'
     system:
       shared:
         - gem: beaker-i18n_helper
