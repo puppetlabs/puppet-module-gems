@@ -108,6 +108,9 @@ dependencies:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: 'simplecov dropped support for Ruby 2.4 from v0.19.0 onwards'
       r2.5:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
