@@ -11,8 +11,8 @@ dependencies:
     dev:
       shared:
         - gem: codecov
-          version: '~> 0.1.10'
-          reason: 'part of the default toolset install; 0.1.10 stopped failing the build on upload failures'
+          version: ['>= 0.2', '< 0.2.6']
+          reason: 'codecov yanked all versions prior to 0.2: https://github.com/codecov/codecov-ruby/issues/87; 0.2.5 is the latest version to support all Ruby versions'
         - gem: 'concurrent-ruby'
           version: '!= 1.1.6'
           reason: 'used by puppet and many others; skip 1.1.6 because of this issue: https://github.com/ruby-concurrency/concurrent-ruby/issues/849'
@@ -110,7 +110,7 @@ dependencies:
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: simplecov
           version: '< 0.19.0'
-          reason: 'simplecov dropped support for Ruby 2.4 from v0.19.0 onwards'
+          reason: "part of the default toolset install; v0.19 requires ruby 2.5 or later"
       r2.5:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -118,6 +118,9 @@ dependencies:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: "0.19.0 is causing builds to hang on TravisCI"
       r2.6:
         - gem: activesupport
           version: '~> 6.0'
@@ -125,6 +128,9 @@ dependencies:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: "0.19.0 is causing builds to hang on TravisCI"
       r2.7:
         - gem: activesupport
           version: '~> 6.0'
@@ -132,6 +138,9 @@ dependencies:
         - gem: puppet_litmus
           version: ['>= 0.4.0', '< 1.0.0']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: "0.19.0 is causing builds to hang on TravisCI"
     system:
       shared:
         - gem: beaker-i18n_helper
