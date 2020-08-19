@@ -1,3 +1,10 @@
+## 0.5.1
+
+- Pin `simplecov` to `< 0.19.0` on Ruby `2.4` as `0.19.0` requires Ruby `>= 2.5`
+- Pin `simplecov` to `< 0.19.0` on Ruby `2.5`, `2.6` and `2.7` as `0.19.0` was causing build hangs on TravisCI
+- Pin `codecov` to `>= 0.2, < 0.2.6` as all versions prior to `0.2` were yanked and `0.2.5` is the latest version 
+supported on all Ruby versions.
+
 ## 0.5.0
 
 - Add Ruby 2.7 support
