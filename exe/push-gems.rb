@@ -22,13 +22,28 @@ Dir["#{PKG_PATH}/*.gem"].each do |file|
   gem_version = gem.split('-').last
   gem_name = gem.split("-#{gem_version}").first
 
+  puts "Obtaining current owner list for #{gem_name}"
+  current_owners = `gem owner #{gem_name}`.scan(%r{-\s(\S+)}).flatten
+
+  owners_to_remove = current_owners - OWNERS
+  unless owners_to_remove.empty?
+    puts "Removing the following owners #{owners_to_remove}"
+    owners_to_remove.each do |owner|
+      value = `gem owner --remove #{owner}`
+      puts value
+    end
+  end
+
+  owners_to_add = OWNERS - current_owners
+  unless owners_to_add.empty?
+    puts "Adding the following owners #{owners_to_add}"
+    owners_to_add.each do |owner|
+      value = `gem owner --add #{owner} #{gem_name}`
+      puts value
+    end
+  end
+
   puts "## Pushing #{gem_name} to https://rubygems.org."
   value = `gem push #{file}`
   puts value
-
-  puts "## Updating owners list for #{gem_name}."
-  OWNERS.each do |owner|
-    value = `gem owner --add #{owner} #{gem_name}`
-    puts value
-  end
 end
