@@ -37,9 +37,6 @@ dependencies:
         - gem: pry
           version: '~> 0.10.4'
           reason: 'part of the default toolset install'
-        - gem: puppet-debugger
-          version: '~> 0.18'
-          reason: 'part of the default toolset install'
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
           reason: 'part of the default toolset install'
@@ -97,6 +94,9 @@ dependencies:
         - gem: simplecov
           version: '< 0.18.0'
           reason: "part of the default toolset install; v0.18 requires ruby 2.4 or later"
+        - gem: puppet-debugger
+          version: '< 1.0.0'
+          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'
       r2.3:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -104,6 +104,9 @@ dependencies:
         - gem: simplecov
           version: '< 0.18.0'
           reason: "part of the default toolset install; v0.18 requires ruby 2.4 or later"
+        - gem: puppet-debugger
+          version: '< 1.0.0'
+          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'  
       r2.4:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -111,6 +114,9 @@ dependencies:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "part of the default toolset install; v0.19 requires ruby 2.5 or later"
+        - gem: puppet-debugger
+          version: '~> 1.0'
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'  
       r2.5:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -121,6 +127,9 @@ dependencies:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
+        - gem: puppet-debugger
+          version: '~> 1.0'
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'    
       r2.6:
         - gem: activesupport
           version: '~> 6.0'
@@ -131,6 +140,9 @@ dependencies:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
+        - gem: puppet-debugger
+          version: '~> 1.0'
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'    
       r2.7:
         - gem: activesupport
           version: '~> 6.0'
@@ -141,6 +153,9 @@ dependencies:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
+        - gem: puppet-debugger
+          version: '~> 1.0'
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'    
     system:
       shared:
         - gem: beaker-i18n_helper
