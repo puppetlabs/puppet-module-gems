@@ -164,11 +164,11 @@ And for example, the gemspec for `test-gem-first-a-1.0.0.gem` will include depen
 
 ## Release Process
 
-- From a clean checkout of master, create a release prep branch.
+- From a clean checkout of `main`, create a release prep branch.
 - Update `config/info.yml` with the new version.
 - Update `CHANGELOG.md`.
 - PR the release prep.
-- Once PR is merged, checkout a clean copy of master.
+- Once PR is merged, checkout a clean copy of `main`.
 - Run `bundle exec exe/build-gems.rb` to build the gems into the `pkg` directory.
 - Validate that the gems have build correctly.
 **The next step requires that you have Ownership permissions for these gems on rubygems.org, also requires access to internal Puppet network.**
@@ -179,7 +179,7 @@ And for example, the gemspec for `test-gem-first-a-1.0.0.gem` will include depen
 
 ## Testing Changes
 
-- Check out a clean copy from master.
+- Check out a clean copy from `main`.
 - Clean out the contents of the `pkg` directory.
 - Run `bundle exec exe/build-gems.rb` to build the gems into the `pkg` directory.
 - Confirm `pkg` directory contains a variety of `.gem` and .`gemspec` files.
@@ -229,4 +229,4 @@ Use of this utility has only been tested on Linux and OS-X platforms.
 
 ## Support
 
-These scripts and gems are maintained by the [IAC team](https://puppetlabs.github.io/iac/). Please file an [issue](https://github.com/puppetlabs/puppet-module-gems/issues) for support. [Contributions](https://github.com/puppetlabs/puppet-module-gems/blob/master/CONTRIBUTING.md) are also welcomed!
+These scripts and gems are maintained by the [IAC team](https://puppetlabs.github.io/iac/). Please file an [issue](https://github.com/puppetlabs/puppet-module-gems/issues) for support. [Contributions](https://github.com/puppetlabs/puppet-module-gems/blob/main/CONTRIBUTING.md) are also welcomed!
