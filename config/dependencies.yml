@@ -57,6 +57,9 @@ dependencies:
           reason: 'part of the default toolset install'
         - gem: rainbow
           version: '~> 2.0'
+        - gem: rspec-expectations
+          version: ['< 3.10.0']
+          reason: 'avoid breaking change until https://github.com/rodjek/rspec-puppet/pull/811 is released'
         - gem: rspec-puppet
           version: ['>= 2.3.2', '< 3.0.0']
           reason: 'part of the default toolset install'
