@@ -5,4 +5,4 @@ info:
   homepage: 'https://github.com/puppetlabs/puppet-module-gems'
   licenses: 'Apache-2.0'
   summary: 'A set of gems declaring Puppet module dependencies.'
-  version: '0.5.1'
+  version: '0.5.2'
