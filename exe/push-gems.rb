@@ -4,20 +4,19 @@ require_relative '../lib/puppet-module-gems/constants.rb'
 include PuppetModuleGems::Constants
 
 OWNERS = [
-"bradejr@puppetlabs.com",
+"carabas.milan@gmail.com",
 "ciaran.mccrisken@puppet.com",
-"daniel.carabas@puppet.com",
 "david.schmitt@puppet.com",
 "david.swan@puppet.com",
 "loredana.ionce@puppet.com",
-"michael.lombardi@puppet.com",
+"michael.t.lombardi@gmail.com",
 "morgan@puppetlabs.com",
 "paula@puppet.com",
 "sheena@puppet.com",
 "tp@puppet.com",
 ]
 
-Dir["#{PKG_PATH}/*.gem"].each do |file|
+Dir["#{PKG_PATH}/*.gem"].sort.each do |file|
   gem = File.basename(file).split('.gem').first
   gem_version = gem.split('-').last
   gem_name = gem.split("-#{gem_version}").first
@@ -29,7 +28,7 @@ Dir["#{PKG_PATH}/*.gem"].each do |file|
   unless owners_to_remove.empty?
     puts "Removing the following owners #{owners_to_remove}"
     owners_to_remove.each do |owner|
-      value = `gem owner --remove #{owner}`
+      value = `gem owner --remove #{owner} #{gem_name}`
       puts value
     end
   end
