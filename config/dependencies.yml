@@ -109,7 +109,7 @@ dependencies:
           reason: "part of the default toolset install; v0.18 requires ruby 2.4 or later"
         - gem: puppet-debugger
           version: '< 1.0.0'
-          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'  
+          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'
       r2.4:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -119,7 +119,10 @@ dependencies:
           reason: "part of the default toolset install; v0.19 requires ruby 2.5 or later"
         - gem: puppet-debugger
           version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'  
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
+        - gem: parallel
+          version: '< 1.20'
+          reason: 'part of the default toolset install, 1.20 requires ruby 2.5 or later'
       r2.5:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -132,7 +135,7 @@ dependencies:
           reason: "0.19.0 is causing builds to hang on TravisCI"
         - gem: puppet-debugger
           version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'    
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
       r2.6:
         - gem: activesupport
           version: '~> 6.0'
@@ -145,7 +148,7 @@ dependencies:
           reason: "0.19.0 is causing builds to hang on TravisCI"
         - gem: puppet-debugger
           version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'    
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
       r2.7:
         - gem: activesupport
           version: '~> 6.0'
@@ -158,7 +161,7 @@ dependencies:
           reason: "0.19.0 is causing builds to hang on TravisCI"
         - gem: puppet-debugger
           version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'    
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
     system:
       shared:
         - gem: beaker-i18n_helper
