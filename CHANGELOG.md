@@ -1,3 +1,9 @@
+## 0.5.3
+
+- Remove `rspec-expectations` after `rspec-puppet` 2.8.0 release
+- Allow installing rspec-puppet-facts v2
+- Pin `parallel` on rubies prior to 2.5 to the last version supporting that ruby
+
 ## 0.5.2
 
 - Update `puppet-debugger` gem to 1.0 for ruby 2.4+
