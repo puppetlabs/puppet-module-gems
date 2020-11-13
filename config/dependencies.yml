@@ -124,9 +124,6 @@ dependencies:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
-        - gem: puppet_litmus
-          version: ['>= 0.4.0', '< 1.0.0']
-          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
@@ -137,9 +134,6 @@ dependencies:
         - gem: activesupport
           version: '~> 6.0'
           reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
-        - gem: puppet_litmus
-          version: ['>= 0.4.0', '< 1.0.0']
-          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt)'
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
