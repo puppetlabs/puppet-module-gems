@@ -26,7 +26,7 @@ dependencies:
           version: '~> 0.26'
           reason: 'part of the default toolset install'
         - gem: metadata-json-lint
-          version: ['>= 2.0.2', '< 3.0.0']
+          version: ['>= 2.0.2', '< 4.0.0']
           reason: 'part of the default toolset install'
         - gem: mocha
           version: ['>= 1.0.0', '< 1.2.0']
