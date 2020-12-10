@@ -66,6 +66,9 @@ dependencies:
         - gem: rubocop
           version: '1.6.1'
           reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-performance
+          version: '1.9.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
         - gem: rubocop-rspec
           version: '2.0.1'
           reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
