@@ -64,13 +64,10 @@ dependencies:
           version: ['>= 1.10.0', '< 3']
           reason: 'part of the default toolset install'
         - gem: rubocop
-          version: '~> 0.49.0'
-          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
-        - gem: rubocop-i18n
-          version: '~> 1.2.0'
+          version: '1.6.1'
           reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
         - gem: rubocop-rspec
-          version: '~> 1.16.0'
+          version: '2.0.1'
           reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
         - gem: rspec_junit_formatter
           version: '~> 0.2'
