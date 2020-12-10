@@ -83,30 +83,6 @@ dependencies:
         - gem: specinfra
           version: '2.82.2'
           reason: 'part of the default toolset install'
-      r2.1:
-        - gem: net-ssh
-          version: '~> 4.2.0'
-          reason: "older version required for Ruby 2.1"
-        - gem: net-telnet
-          version: '~> 0.1.1'
-        - gem: i18n
-          version: ['>= 1.0.0', '< 1.5.2']
-        - gem: simplecov
-          version: '< 0.18.0'
-          reason: "part of the default toolset install; v0.18 requires ruby 2.4 or later"
-        - gem: puppet-debugger
-          version: '< 1.0.0'
-          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'
-      r2.3:
-        - gem: activesupport
-          version: ['>=5.0.0', '< 6.0.0']
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
-        - gem: simplecov
-          version: '< 0.18.0'
-          reason: "part of the default toolset install; v0.18 requires ruby 2.4 or later"
-        - gem: puppet-debugger
-          version: '< 1.0.0'
-          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'
       r2.4:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
