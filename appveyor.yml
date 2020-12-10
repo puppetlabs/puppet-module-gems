@@ -4,16 +4,10 @@ version: 1.1.x.{build}
 cache:
   - vendor/bundle
 
+image: Visual Studio 2019
+
 environment:
   matrix:
-    - RUBY_VERSION: 21-x64
-      SET: dev
-    - RUBY_VERSION: 21-x64
-      SET: system
-    - RUBY_VERSION: 23-x64
-      SET: dev
-    - RUBY_VERSION: 23-x64
-      SET: system
     - RUBY_VERSION: 24-x64
       SET: dev
     - RUBY_VERSION: 24-x64
@@ -21,6 +15,10 @@ environment:
     - RUBY_VERSION: 25-x64
       SET: dev
     - RUBY_VERSION: 25-x64
+      SET: system
+    - RUBY_VERSION: 27-x64
+      SET: dev
+    - RUBY_VERSION: 27-x64
       SET: system
 
 install:
