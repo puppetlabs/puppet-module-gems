@@ -2,8 +2,6 @@ dependencies:
   shared:
     default:
       shared:
-      r2.1:
-      r2.3:
       r2.4:
       r2.5:
       r2.6:
@@ -11,8 +9,8 @@ dependencies:
     dev:
       shared:
         - gem: codecov
-          version: ['>= 0.2', '< 0.2.6']
-          reason: 'codecov yanked all versions prior to 0.2: https://github.com/codecov/codecov-ruby/issues/87; 0.2.5 is the latest version to support all Ruby versions'
+          version: '~> 0.2'
+          reason: 'part of the default toolset install'
         - gem: 'concurrent-ruby'
           version: '!= 1.1.6'
           reason: 'used by puppet and many others; skip 1.1.6 because of this issue: https://github.com/ruby-concurrency/concurrent-ruby/issues/849'
@@ -22,9 +20,6 @@ dependencies:
         - gem: facterdb
           version: ['>= 0.8.1', '< 2.0.0']
           reason: 'part of the default toolset install'
-        - gem: gettext-setup
-          version: '~> 0.26'
-          reason: 'part of the default toolset install'
         - gem: metadata-json-lint
           version: ['>= 2.0.2', '< 4.0.0']
           reason: 'part of the default toolset install'
@@ -32,16 +27,13 @@ dependencies:
           version: ['>= 1.0.0', '< 1.2.0']
           reason: 'part of the legacy toolset install; some breakage with 1.2.0 made us stop updating'
         - gem: parallel_tests
-          version: ['>= 2.14.1', '< 2.14.3']
+          version: ['~> 3.4']
           reason: 'part of the default toolset install'
         - gem: pry
           version: '~> 0.10.4'
           reason: 'part of the default toolset install'
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
-          reason: 'part of the default toolset install'
-        - gem: puppet_pot_generator
-          version: '~> 1.0'
           reason: 'part of the default toolset install'
         - gem: puppet-strings
           version: '~> 2.0'
@@ -50,7 +42,7 @@ dependencies:
           version: '~> 1.8'
           reason: 'part of the default toolset install'
         - gem: puppet-syntax
-          version: ['>= 2.4.1', '< 3.0.0']
+          version: ['~> 3.0']
           reason: 'part of the default toolset install'
         - gem: puppetlabs_spec_helper
           version: ['>= 2.9.0', '< 3.0.0']
@@ -64,13 +56,13 @@ dependencies:
           version: ['>= 1.10.0', '< 3']
           reason: 'part of the default toolset install'
         - gem: rubocop
-          version: '~> 0.49.0'
+          version: '1.6.1'
           reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
-        - gem: rubocop-i18n
-          version: '~> 1.2.0'
+        - gem: rubocop-performance
+          version: '1.9.1'
           reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
         - gem: rubocop-rspec
-          version: '~> 1.16.0'
+          version: '2.0.1'
           reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
         - gem: rspec_junit_formatter
           version: '~> 0.2'
@@ -83,30 +75,9 @@ dependencies:
         - gem: specinfra
           version: '2.82.2'
           reason: 'part of the default toolset install'
-      r2.1:
-        - gem: net-ssh
-          version: '~> 4.2.0'
-          reason: "older version required for Ruby 2.1"
-        - gem: net-telnet
-          version: '~> 0.1.1'
-        - gem: i18n
-          version: ['>= 1.0.0', '< 1.5.2']
-        - gem: simplecov
-          version: '< 0.18.0'
-          reason: "part of the default toolset install; v0.18 requires ruby 2.4 or later"
         - gem: puppet-debugger
-          version: '< 1.0.0'
-          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'
-      r2.3:
-        - gem: activesupport
-          version: ['>=5.0.0', '< 6.0.0']
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
-        - gem: simplecov
-          version: '< 0.18.0'
-          reason: "part of the default toolset install; v0.18 requires ruby 2.4 or later"
-        - gem: puppet-debugger
-          version: '< 1.0.0'
-          reason: 'puppet debugger version 1.0 only supports ruby 2.4+'
+          version: '~> 1.0'
+          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
       r2.4:
         - gem: activesupport
           version: ['>=5.0.0', '< 6.0.0']
@@ -114,106 +85,38 @@ dependencies:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "part of the default toolset install; v0.19 requires ruby 2.5 or later"
-        - gem: puppet-debugger
-          version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
         - gem: parallel
           version: '< 1.20'
           reason: 'part of the default toolset install, 1.20 requires ruby 2.5 or later'
       r2.5:
-        - gem: activesupport
-          version: ['>=5.0.0', '< 6.0.0']
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
-        - gem: puppet-debugger
-          version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
       r2.6:
-        - gem: activesupport
-          version: '~> 6.0'
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
-        - gem: puppet-debugger
-          version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
       r2.7:
-        - gem: activesupport
-          version: '~> 6.0'
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
-        - gem: puppet_litmus
-          version: ['>= 0.4.0', '< 1.0.0']
-          reason: 'part of the default toolset install; requires ruby 2.7 or later (for bolt and puppet6/7)'
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
-        - gem: puppet-debugger
-          version: '~> 1.0'
-          reason: 'part of the default toolset install, 1.0.0 works with ruby 2.4+'
     system:
       shared:
-        - gem: beaker-i18n_helper
-          version: '~> 1.1'
-        - gem: beaker-module_install_helper
-          version: ['>= 0.1.4', '< 1.0.0']
-        - gem: beaker-puppet_install_helper
-          version: ['>= 0.7.1', '< 1.0.0']
-        - gem: beaker-task_helper
-          version: ['>= 1.1.0', '< 2.0.0']
-        - gem: master_manipulator
-          version: ['>= 2.1.1', '< 3.0.0']
-        - gem: beaker
-          version: ['>= 4.0.0','< 5.0.0']
-        - gem: beaker-puppet
-          version: ['>= 1.6.0','< 2.0.0']
-        - gem: beaker-abs
-          version: ['>= 0.4.0','< 1.0.0']
-        - gem: beaker-pe
-          version: ['>=2.0.0','< 3.0.0']
-        - gem: beaker-hostgenerator
-          version: ['>=1.1.14','< 2.0.0']
-        - gem: beaker-rspec
-          version: ['>=6.2.4','< 7.0.0']
-        - gem: beaker-aws
-          version: ['>=0.6.0','< 1.0.0']
-        - gem: beaker-docker
-          version: ['>=0.3.3','< 1.0.0']
-        - gem: beaker-google
-          version: ['>=0.1.0','< 1.0.0']
-        - gem: beaker-openstack
-          version: ['>=0.2.0','< 1.0.0']
-        - gem: beaker-vagrant
-          version: ['>=0.5.0','< 1.0.0']
-        - gem: beaker-vcloud
-          version: ['>=1.0.0','< 2.0.0']
-        - gem: beaker-vmpooler
-          version: ['>=1.3.0','< 2.0.0']
-        - gem: beaker-vmware
-          version: ['>=0.3.0','< 1.0.0']
-      r2.1:
-        - gem: fog-openstack
-          version: '0.1.25'
-        - gem: net-ssh
-          version: '~> 4.2.0'
-          reason: "Required for Ruby 2.1"
-        - gem: nokogiri
-          version: '< 1.10.0'
-          reason: "Ruby 2.1 support was dropped in 1.10.0"
-      r2.3:
-        - gem: 'byebug'
-          version: '<= 11.0.1'
-          reason: "byebug is a transitive dependency; v 11.0.1 is the last one to support ruby 2.3"
       r2.4:
       r2.5:
+        - gem: puppet_litmus
+          version: ['~> 0.20.0']
+          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
       r2.6:
+        - gem: puppet_litmus
+          version: ['~> 0.20.0']
+          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
       r2.7:
+        - gem: puppet_litmus
+          version: ['~> 0.20.0']
+          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
   posix:
     default:
-      r2.1:
-      r2.3:
       r2.4:
       r2.5:
       r2.6:
@@ -226,33 +129,13 @@ dependencies:
         - gem: bcrypt_pbkdf
           version: '~> 1.0'
           reason: 'required for ed25519 keys when using bolt, but fails building on windows in bolt and pdk native packaging; see https://tickets.puppetlabs.com/browse/BOLT-1296 and puppetlabs/bolt#1337 for details.'
-      r2.1:
-        - gem: puppet-blacksmith
-          version: '< 5.0'
-          reason: 'part of the default toolset install; 5.0 dropped ruby <2.4 support'
-      r2.3:
-        - gem: puppet-blacksmith
-          version: '< 5.0'
-          reason: 'part of the default toolset install; 5.0 dropped ruby <2.4 support'
-      r2.4:
         - gem: puppet-blacksmith
           version: '~> 6.0'
           reason: 'part of the default toolset install; 5.0 dropped ruby <2.4 support'
       r2.5:
-        - gem: puppet-blacksmith
-          version: '~> 6.0'
-          reason: 'part of the default toolset install; 5.0 dropped ruby <2.4 support'
       r2.6:
-        - gem: puppet-blacksmith
-          version: '~> 6.0'
-          reason: 'part of the default toolset install; 5.0 dropped ruby <2.4 support'
       r2.7:
-        - gem: puppet-blacksmith
-          version: '~> 6.0'
-          reason: 'part of the default toolset install; 5.0 dropped ruby <2.4 support'
     system:
-      r2.1:
-      r2.3:
       r2.4:
       r2.5:
       r2.6:
@@ -260,24 +143,20 @@ dependencies:
   win:
     default:
       shared:
-      r2.1:
-        - gem: nokogiri
-          version: '1.7.2'
-      r2.3:
+        - gem: rb-readline
+          version: '= 0.5.5'
+          reason: 'windows dependency for puppet-debugger'
+
       r2.4:
       r2.5:
       r2.6:
       r2.7:
     dev:
-      r2.1:
-      r2.3:
       r2.4:
       r2.5:
       r2.6:
       r2.7:
     system:
-      r2.1:
-      r2.3:
       r2.4:
       r2.5:
       r2.6:
