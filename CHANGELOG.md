@@ -1,3 +1,36 @@
+## 1.0.0
+
+### Remove Ruby 2.1 & 2.3 dependencies
+We no longer support these Ruby versions
+
+### Move `puppet_litmus` to `system_tests`
+With this we can remove the litmus dependency from unit tests - which historically has been causing dependency conflicts between `bolt`'s internals and the `puppet` gem under test. Instead [`pdk-templates`](https://github.com/puppetlabs/pdk-templates/pull/371) now installs `puppet_litmus` only when actually needed through the `system_tests` group.
+
+This removes the unmaintained beaker dependencies from the gems. If you still require those, you can still use the previous `<1.0.0` gems. Please consider [upgrading](https://puppetlabs.github.io/litmus/Converting-modules-to-use-Litmus.html).
+
+### Update to newest rubocop version
+With the drop of old rubies we can update to the current version of rubocop. Together with the [change of policies](https://github.com/puppetlabs/pdk-templates/pull/371), there should be only very little changes required to your ruby code and `pdk validate -a` should fix the most annoying bits.
+- Pins `rubocop` to 1.6.1
+- Pins `rubocop-spec` to 2.0.1
+- Add `rubocop-performance`
+
+### Update tooling for ruby 2.4+
+- Pull `puppet-debugger` into main section
+- Pull `puppet-blacksmith` into main section
+- Relax `codecov` pin
+- Update `parallel_tests` pin to latest version
+- Update `puppet-syntax` pin to latest version
+
+### Remove i18n related tooling
+- `gettext-setup`
+- `puppet_pot_generator`
+- `rubocop-i18n`
+
+### Other cleanup
+- allow newer versions of `metadata-json-lint`
+- add `rb-readline` pin for windows (formerly in pdk-template's default config's Gemfile)
+- remove activesupport pin where not needed
+
 ## 0.5.3
 
 - Remove `rspec-expectations` after `rspec-puppet` 2.8.0 release
