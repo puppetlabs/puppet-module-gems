@@ -89,23 +89,14 @@ dependencies:
           version: '< 1.20'
           reason: 'part of the default toolset install, 1.20 requires ruby 2.5 or later'
       r2.5:
-        - gem: activesupport
-          version: ['>=5.0.0', '< 6.0.0']
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
       r2.6:
-        - gem: activesupport
-          version: '~> 6.0'
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
       r2.7:
-        - gem: activesupport
-          version: '~> 6.0'
-          reason: "required by github_changelog_generator; v6 requires ruby 2.5 or later"
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
