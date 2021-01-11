@@ -105,15 +105,15 @@ dependencies:
       r2.4:
       r2.5:
         - gem: puppet_litmus
-          version: ['~> 0.20.0']
+          version: ['~> 0.20']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
       r2.6:
         - gem: puppet_litmus
-          version: ['~> 0.20.0']
+          version: ['~> 0.20']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
       r2.7:
         - gem: puppet_litmus
-          version: ['~> 0.20.0']
+          version: ['~> 0.20']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
   posix:
     default:
