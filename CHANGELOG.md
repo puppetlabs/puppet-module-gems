@@ -1,6 +1,6 @@
 ## 1.0.1
 
-- Relax `puppet_limtus` dependency range from ~> 0.21.0 to ~> 0.21
+- Relax `puppet_litmus` dependency range from ~> 0.21.0 to ~> 0.21
 
 ## 1.0.0
 
