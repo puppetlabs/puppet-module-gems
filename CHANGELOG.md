@@ -1,3 +1,7 @@
+## 1.0.1
+
+- Relax `puppet_litmus` dependency range from ~> 0.21.0 to ~> 0.21
+
 ## 1.0.0
 
 ### Remove Ruby 2.1 & 2.3 dependencies
