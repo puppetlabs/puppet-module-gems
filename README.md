@@ -9,8 +9,9 @@
     * [Setup requirements](#setup-requirements)
 3. [Usage - Configuration options and additional functionality](#usage)
 4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Support](#support)
+5. [Release Process](#release-process)
+6. [Limitations - OS compatibility, etc.](#limitations)
+7. [Support](#support)
 
 ## Description
 
