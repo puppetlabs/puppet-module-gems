@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Ensure that only compatible pathspec versions are considered on older ruby versions
+
 ## 1.0.1
 
 - Relax `puppet_litmus` dependency range from ~> 0.21.0 to ~> 0.21

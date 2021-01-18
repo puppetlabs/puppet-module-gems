@@ -88,10 +88,16 @@ dependencies:
         - gem: parallel
           version: '< 1.20'
           reason: 'part of the default toolset install, 1.20 requires ruby 2.5 or later'
+        - gem: pathspec
+          version: '< 1.0.0'
+          reason: 'pulled in by puppetlabs_spec_helper, 1.0.0 requires ruby 2.6 or later'
       r2.5:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
+        - gem: pathspec
+          version: '< 1.0.0'
+          reason: 'pulled in by puppetlabs_spec_helper, 1.0.0 requires ruby 2.6 or later'
       r2.6:
         - gem: simplecov
           version: '< 0.19.0'
