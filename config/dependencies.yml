@@ -45,7 +45,7 @@ dependencies:
           version: ['~> 3.0']
           reason: 'part of the default toolset install'
         - gem: puppetlabs_spec_helper
-          version: ['>= 2.9.0', '< 3.0.0']
+          version: ['>= 2.9.0', '< 4.0.0']
           reason: 'part of the default toolset install'
         - gem: rainbow
           version: '~> 2.0'
