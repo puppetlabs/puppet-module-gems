@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Allow puppetlabs_spec_helper 3.0.0 and later
+
 ## 1.0.2
 
 - Ensure that only compatible pathspec versions are considered on older ruby versions
