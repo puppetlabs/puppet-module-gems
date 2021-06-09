@@ -11,3 +11,4 @@ group :unit_test do
 end
 
 gem 'deep_merge', '~> 1.1.0', :require => false
+gem 'pathspec', '~> 0.2', :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.6') 
