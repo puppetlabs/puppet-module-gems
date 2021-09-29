@@ -30,7 +30,7 @@ dependencies:
           version: ['~> 3.4']
           reason: 'part of the default toolset install'
         - gem: pry
-          version: '~> 0.10.4'
+          version: '~> 0.10'
           reason: 'part of the default toolset install'
         - gem: puppet-lint
           version: ['>= 2.3.0', '< 3.0.0']
