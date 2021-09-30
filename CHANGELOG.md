@@ -1,3 +1,8 @@
+## 1.1.1
+
+- Add `docile` dependency `< 1.4.0`
+- Relax `pry` dependency range from `~> 0.10.4` to `~> 0.10`
+
 ## 1.1.0
 
 - Allow puppetlabs_spec_helper 3.0.0 and later
