@@ -20,6 +20,10 @@ environment:
       SET: dev
     - RUBY_VERSION: 27-x64
       SET: system
+    - RUBY_VERSION: 30-x64
+      SET: dev
+    - RUBY_VERSION: 30-x64
+      SET: system
 
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%

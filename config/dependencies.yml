@@ -6,6 +6,7 @@ dependencies:
       r2.5:
       r2.6:
       r2.7:
+      r3.0:
     dev:
       shared:
         - gem: codecov
@@ -55,15 +56,6 @@ dependencies:
         - gem: rspec-puppet-facts
           version: ['>= 1.10.0', '< 3']
           reason: 'part of the default toolset install'
-        - gem: rubocop
-          version: '1.6.1'
-          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
-        - gem: rubocop-performance
-          version: '1.9.1'
-          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
-        - gem: rubocop-rspec
-          version: '2.0.1'
-          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
         - gem: rspec_junit_formatter
           version: '~> 0.2'
         - gem: serverspec
@@ -94,6 +86,15 @@ dependencies:
         - gem: docile
           version: '< 1.4.0'
           reason: 'pulled in by simplecov, 1.4.0 requires ruby 2.5 or later'
+        - gem: rubocop
+          version: '1.6.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-performance
+          version: '1.9.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-rspec
+          version: '2.0.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
       r2.5:
         - gem: simplecov
           version: '< 0.19.0'
@@ -101,14 +102,56 @@ dependencies:
         - gem: pathspec
           version: '< 1.0.0'
           reason: 'pulled in by puppetlabs_spec_helper, 1.0.0 requires ruby 2.6 or later'
+        - gem: rubocop
+          version: '1.6.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-performance
+          version: '1.9.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-rspec
+          version: '2.0.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
       r2.6:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
+        - gem: rubocop
+          version: '1.6.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-performance
+          version: '1.9.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-rspec
+          version: '2.0.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
       r2.7:
         - gem: simplecov
           version: '< 0.19.0'
           reason: "0.19.0 is causing builds to hang on TravisCI"
+        - gem: rubocop-rspec
+          version: '2.0.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop
+          version: '1.6.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+        - gem: rubocop-performance
+          version: '1.9.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+      r3.0:
+        - gem: simplecov
+          version: '< 0.19.0'
+          reason: "0.19.0 is causing builds to hang on TravisCI"
+        - gem: rubocop-rspec
+          version: '~> 2.2.0'
+          reason: 'part of the default toolset install; pdk-templates may have to be updated'
+        - gem: rubocop
+          version: '~> 1.12'
+          reason: 'part of the default toolset install; pdk-templates may have to be updated'
+        - gem: rubocop-performance
+          version: '1.9.1'
+          reason: 'part of the default toolset install; pinned to this specific version as this is what the pdk-templates are using'
+
+
     system:
       shared:
       r2.4:
@@ -124,12 +167,17 @@ dependencies:
         - gem: puppet_litmus
           version: ['~> 0.20']
           reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
+      r3.0:
+        - gem: puppet_litmus
+          version: ['~> 0.20']
+          reason: 'part of the default toolset install; requires ruby 2.5 or later (for bolt and puppet6/7)'
   posix:
     default:
       r2.4:
       r2.5:
       r2.6:
       r2.7:
+      r3.0:
     dev:
       shared:
         - gem: ed25519
@@ -144,11 +192,13 @@ dependencies:
       r2.5:
       r2.6:
       r2.7:
+      r3.0:
     system:
       r2.4:
       r2.5:
       r2.6:
       r2.7:
+      r3.0:
   win:
     default:
       shared:
@@ -160,13 +210,16 @@ dependencies:
       r2.5:
       r2.6:
       r2.7:
+      r3.0:
     dev:
       r2.4:
       r2.5:
       r2.6:
       r2.7:
+      r3.0:
     system:
       r2.4:
       r2.5:
       r2.6:
       r2.7:
+      r3.0:
